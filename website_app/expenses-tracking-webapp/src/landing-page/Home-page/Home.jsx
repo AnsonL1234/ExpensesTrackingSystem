@@ -14,7 +14,7 @@ export default function Home() {
             </div>
             <div className='homePage-right'>
                     <p>Expenses Tracking</p>
-                    <input type="text" name="searching" id="searchBar" placeholder='SEARCHING...' />
+                    <input type="text" name="searching" id="searchBar" placeholder='SEARCHING...' className='searchType'/>
                     <div className="box"></div>
                     <div className="box"></div>
                     <div className="box"></div>

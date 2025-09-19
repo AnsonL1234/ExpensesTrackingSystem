@@ -12,7 +12,7 @@ header {
     left: 0;
 }
 
-.navbar, a {
+.navbar, .log-in-btn {
     color: var(--navbar-color);
     font-weight: bold;
     text-decoration: none;
@@ -24,6 +24,7 @@ header {
     font-family: var(--title-front);
     color: var(--primary-color);
     font-size: 22px;
+    text-align: center;
 }
 
 .header_left {

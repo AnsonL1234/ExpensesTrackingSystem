@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HeaderNavbar from "./header.navbar.jsx";
 import './header.css'
 import '../../components/button.css'
@@ -16,9 +16,9 @@ export default function Header() {
                 <h2 className="logo-text">Expensio</h2>
             </div>
             <div className="header_right">
-                <a onClick={() => navigate("/login")} className="log-in-btn">Log in</a>
+                <Link to="/login" className="log-in-btn">Log in</Link>
                 <button 
-                    type="button"
+                    className="button"
                     onClick={() => navigate("/register")}
                 >
                     Register

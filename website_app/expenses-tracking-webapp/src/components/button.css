@@ -1,6 +1,6 @@
 @import url('../index.css');
 
-button {
+.button {
     border-radius: 34px;
     border-width: 0;
     width: 100px;
@@ -9,13 +9,14 @@ button {
     font-weight: bolder;
     font-size: 14px;
     color: white;
+    
     background-color: var(--secondary-color);
 }
 
-button:hover {
+.button:hover {
     background-color: var(--btn-hover-color);
 }
 
-button:active {
+.button:active {
     opacity: 0.8;
 }
