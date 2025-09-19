@@ -1,15 +1,35 @@
+@import url("../../index.css");
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
     width: 100%;
-    height: 60px;
     background-color: #f8f9fa;
     border-bottom: 1px solid #eee;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-image {
-    width: 120px;
-    height: 40px;
+.navbar, a {
+    color: var(--navbar-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 19px;
+    padding: 15px;
+}
+
+.header_logo {
+    font-family: var(--title-front);
+    color: var(--primary-color);
+    font-size: 22px;
+}
+
+.header_left {
+    margin-left: clamp(20px, 8vw, 150px);
+}
+
+.header_right {
+    margin-right: clamp(20px, 8vw, 150px);
 }

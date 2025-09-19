@@ -1,14 +1,15 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --text-front: "Arial Nova Condensed", Arial, sans-serif;;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --primary-color: #1b321b;
+  --secondary-color: #4d824d;
+  --btn-hover-color: #589d58;
+  --navbar-color: #496049;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --title-front: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body {
+  font-family: var(--text-front);
+  margin-top: 0;
 }
