@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LeftArrow from "../assets/left-arrow.png";
+import "./Register.css";
 
 
 export default function Register() {
@@ -13,7 +14,7 @@ export default function Register() {
     const[confirmPassword, setConfirmPassword] = useState("");
     const[isPasswordCorrect, setIsPasswordCorrect] = useState(true);
     const[responseMessage, setResponseMessage] = useState("");
-    const[hasError, setHasError] = useState(false);
+    const[hasError, setHasError] = useState(true);
 
     const handleRegisterSubmit = () => {
         event.preventDefault();
@@ -77,6 +78,9 @@ export default function Register() {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <label htmlFor="confirm-password">Confirm Password</label>
+                    {!isPasswordCorrect && (
+                        <span className="error-message-register">* Password does not match...</span>
+                    )}
                     <input 
                         type="password" 
                         id="confirm-password" 
@@ -85,14 +89,15 @@ export default function Register() {
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
 
-                    {isPasswordCorrect === false && (
-                        <span style={{ color: "red" }}>Password does not match...</span>
-                    )}
-
                     <button type="submit">
                         Sign Up
                     </button>
-                    <p>Already have an account?<a >Login</a></p>
+
+                    <div className="divider">
+                        <span>or</span>
+                    </div>
+
+                    <p className="register-footer">Already have an account?<a onClick={() => navigate("/login")}>Login</a></p>
                 </form>
             </div>
         </>

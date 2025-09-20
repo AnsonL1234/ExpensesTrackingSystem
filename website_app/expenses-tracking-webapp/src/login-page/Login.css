@@ -89,8 +89,10 @@ button[type=button], button[type=submit] {
     height: 30px;
     margin-top: 25px;
     border-radius: 4px;
+    font-weight: bold;
     border: none;
     background-color: var(--secondary-color);
+    color: white;
 }
 
 button[type=button]:hover, button[type=submit]:hover {
