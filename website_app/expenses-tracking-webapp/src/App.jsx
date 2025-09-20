@@ -12,11 +12,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />}  />
-          <Route path="/feature" element={<Feature />}  />
+          <Route element={<Header />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />}  />
+            <Route path="/feature" element={<Feature />}  />
+          </Route>
+
+          {/* Render it without header */}
           <Route path="/login" element={<Login />}  />
         </Routes>
       </BrowserRouter>

@@ -20,6 +20,10 @@ header {
     padding: 15px;
 }
 
+.navbar:hover, .log-in-btn:hover {
+    color: var(--btn-hover-color);
+}
+
 .header_logo {
     font-family: var(--title-front);
     color: var(--primary-color);

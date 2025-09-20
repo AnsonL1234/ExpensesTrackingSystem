@@ -31,7 +31,7 @@ export default function Login() {
 
     return (
         <>
-            <a onClick={() => navigate("/home")} className="backPointer">
+            <a onClick={() => navigate(-1)} className="backPointer">
                 <img src={LeftArrow}  />
                 back
             </a>
@@ -72,6 +72,10 @@ export default function Login() {
                         Login
                     </button>
                 </form>
+
+                <div className="divider">
+                    <span>or</span>
+                </div>
 
                 <button type="button" onClick={() => navigate("/register")}>
                     Create An Account

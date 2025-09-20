@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import HeaderNavbar from "./header.navbar.jsx";
 import './header.css'
 import '../../components/button.css'
@@ -8,7 +8,8 @@ export default function Header() {
     const navigate = useNavigate();
 
     return (
-        <header>
+        <>
+            <header>
             <div className="header_left">
                 <HeaderNavbar />
             </div>
@@ -25,5 +26,7 @@ export default function Header() {
                 </button>
             </div>
         </header>
+        <Outlet />
+        </>
     );
 }
