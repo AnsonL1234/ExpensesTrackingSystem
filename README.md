@@ -1,4 +1,4 @@
-# 🚀 Expenses Tracking System + Web applicatio
+# 🚀 Expenses Tracking System + Web application
 
 **Project Name:** Expensio
 
