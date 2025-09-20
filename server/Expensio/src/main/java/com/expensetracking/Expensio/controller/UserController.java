@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "/api/user")
 public class UserController {
 
