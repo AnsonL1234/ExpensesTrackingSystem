@@ -11,6 +11,6 @@ create table profile (
     address3 varchar(50), 
     city varchar(50), 
     town varchar(50), 
-    aircode varchar(10),
+    postcodeexpenses varchar(10),
     foreign key (user_id) references user(user_id)
 );

@@ -19,7 +19,7 @@ public class ExpenseRepo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "expense_id")
+    @Column(name = "expenses_id")
     private int expense_id;
 
     @Column(name = "amount")

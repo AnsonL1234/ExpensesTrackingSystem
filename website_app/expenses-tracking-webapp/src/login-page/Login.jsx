@@ -19,9 +19,11 @@ export default function Login() {
         axios
             .post(`http://localhost:7070/api/auth/login?username=${username}&password=${password}`)
             .then((respon) => {
+                const id = respon.data.user_id;
                 setResponseMessage("User is login successfully!");
                 setHasError(false);
-                console.log(respon.data)
+                navigate("/mainPage", { state: {userId: id}})
+                console.log(id); // debug
             })
             .catch((err) => {
                 setHasError(true);

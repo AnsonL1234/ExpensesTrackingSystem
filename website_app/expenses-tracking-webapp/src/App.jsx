@@ -5,6 +5,7 @@ import Feature from './landing-page/Feature-page/Feature.jsx'
 import Header from './landing-page/nevigation/header.jsx'
 import Login from './login-page/Login.jsx';
 import Register from './register-page/Register.jsx'
+import MainPage from './MainPage/MainPage.jsx';
 import './App.css'
 
 function App() {
@@ -20,9 +21,14 @@ function App() {
             <Route path="/feature" element={<Feature />}  />
           </Route>
 
+          <Route path='/mainPage' element={<MainPage />}>
+
+          </Route>
+
           {/* Render it without header */}
           <Route path="/login" element={<Login />}  />
           <Route path="/register" element={<Register />}  />
+          {/* <Route path="/mainPage" element={<MainPage />}  /> */}
         </Routes>
       </BrowserRouter>
     </>
