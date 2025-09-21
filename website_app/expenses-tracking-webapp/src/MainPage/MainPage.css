@@ -1,0 +1,39 @@
+@import url("../index.css");
+
+.mainPage_left {
+    color: var(--nav-text-clr);
+    /* background-color: var(--primary-color); */
+    width: clamp(120px, 12vw, 250px);
+}
+
+.logo-text {
+    font-family: var(--title-front);
+    color: var(--primary-color);
+    font-size: 22px;
+    text-align: start;
+    text-decoration: underline;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.navigator-left {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.nav_link {
+    color: var(--nav-text-clr);
+    font-family: var(--title-front);
+    align-items: center;
+    font-size: 12px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.nav_link:hover {
+    border-radius: 3px;
+    background-color: var(--nav-hover-clr);
+    opacity: 0.8;
+}

@@ -1,12 +1,15 @@
 :root {
-  --text-front: "Arial Nova Condensed", Arial, sans-serif;;
+  --text-front: "Arial Nova Condensed", Arial, sans-serif;
+  --title-front: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
   --primary-color: #1b321b;
   --secondary-color: #4d824d;
   --btn-hover-color: #589d58;
   --navbar-color: #496049;
 
-  --title-front: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  --primary-text-clr: #000000;
+  --nav-text-clr: #545454;
+  --nav-hover-clr: #f6f6f6;
 }
 
 body {

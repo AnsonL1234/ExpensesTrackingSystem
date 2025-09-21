@@ -15,14 +15,14 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<Header />}>
+          <Route element={<MainPage />}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />}  />
             <Route path="/feature" element={<Feature />}  />
           </Route>
 
           <Route path='/mainPage' element={<MainPage />}>
-
+          
           </Route>
 
           {/* Render it without header */}

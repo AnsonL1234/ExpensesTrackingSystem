@@ -29,6 +29,7 @@ header {
     color: var(--primary-color);
     font-size: 22px;
     text-align: center;
+    text-decoration: underline;
 }
 
 .header_left {

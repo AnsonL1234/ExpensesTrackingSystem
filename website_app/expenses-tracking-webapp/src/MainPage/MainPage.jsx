@@ -1,43 +1,48 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+// import axios from "axios";
+// import { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
+import "./MainPage.css"
 
 
 const MainPage = () => {
 
-    const location = useLocation();
-    const userId = location.state?.userId;
-    const [expense, setExpense] = useState(null);
+    // const location = useLocation();
+    // const userId = location.state?.userId;
+    // const [expense, setExpense] = useState(null);
 
-    useEffect(() => {
-        if (userId) {
-            axios
-            .get(`http://localhost:7070/api/user/expense/${userId}`)
-            .then((response) => {
-                setExpense(response.data);
-                console.log(response)
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-        }
-    }, [userId]) 
+    // useEffect(() => {
+    //     if (userId) {
+    //         axios
+    //         .get(`http://localhost:7070/api/user/expense/${userId}`)
+    //         .then((response) => {
+    //             setExpense(response.data);
+    //             console.log(response)
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         })
+    //     }
+    // }, [userId]) 
+
+
 
     return (
         <>
-           {
-                Array.isArray(expense) ? (
-                    expense.map((ex, idx) => (
-                        <ul key={idx}>
-                            <li>Amount: {ex.amount}</li>
-                            <li>Purpose: {ex.purpose}</li>
-                            <li>Spend At: {ex.spend_at}</li>
-                        </ul>
-                    ))
-                ): (
-                    <div>No expense found!</div>
-                )
-           }
+           <div className="mainPage">
+            <div className="mainPage_left">
+                <h2 className="logo-text">
+                    Expensio
+                </h2>
+                <nav className="navigator-left">
+                    <Link to="/" className="nav_link">Dashboard</Link>
+                    <Link to="/" className="nav_link">Expense</Link>
+                    <Link to="/" className="nav_link">Transaction</Link>
+                </nav>
+            </div>
+            <div className="mainPage_right">
+                
+            </div>
+           </div>
         </>
     );
 }
