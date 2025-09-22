@@ -86,6 +86,7 @@ or
 **GET Request**
 ```sql
 GET -> /api/user/users -> Fetch all the user
+GET -> /api/user/expense/{user_id} -> Fetch expense with user_id 
 ```
 
 **POST Request**
