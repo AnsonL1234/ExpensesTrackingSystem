@@ -9,7 +9,7 @@
 .logo-text {
     font-family: var(--title-front);
     color: var(--primary-color);
-    font-size: 22px;
+    font-size: 24px;
     text-align: start;
     text-decoration: underline;
     margin: 0;
@@ -19,6 +19,7 @@
 .navigator-left {
     display: flex;
     flex-direction: column;
+    position: fixed;
     padding: 25px;
 }
 

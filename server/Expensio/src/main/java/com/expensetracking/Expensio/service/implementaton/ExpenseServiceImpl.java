@@ -22,4 +22,9 @@ public class ExpenseServiceImpl implements ExpenseService {
     public List<ExpenseRepo> retrieveExpenseByUserId(int id) {
         return expenseDAO.listExpenseByUserID(id);
     }
+
+    @Override
+    public List<ExpenseRepo> findExpenseByPast5Days(int id) {
+        return expenseDAO.listOfExpenseByDays(id);
+    }
 }

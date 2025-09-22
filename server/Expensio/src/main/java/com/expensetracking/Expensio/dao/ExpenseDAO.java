@@ -11,4 +11,6 @@ public interface ExpenseDAO  {
     void save(ExpenseRepo expenseRepo);
 
     List<ExpenseRepo> listExpenseByUserID(int user_id);
+
+    List<ExpenseRepo> listOfExpenseByDays(int user_id);
 }

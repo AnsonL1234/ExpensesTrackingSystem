@@ -1,6 +1,7 @@
 // import axios from "axios";
 // import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
+import DashboardPage from "./dashboard/dashboard";
 import "./MainPage.css"
 
 
@@ -40,7 +41,7 @@ const MainPage = () => {
                 </nav>
             </div>
             <div className="mainPage_right">
-                
+                <DashboardPage />
             </div>
            </div>
         </>

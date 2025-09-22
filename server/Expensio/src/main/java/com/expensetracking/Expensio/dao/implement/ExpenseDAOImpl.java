@@ -8,6 +8,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -39,5 +41,22 @@ public class ExpenseDAOImpl implements ExpenseDAO {
 
         // return the result
         return retrieveExpenseQuery.getResultList();
+    }
+
+    @Override
+    public List<ExpenseRepo> listOfExpenseByDays(int user_id) {
+
+        LocalDateTime minusLocalDate = LocalDateTime.now().minusDays(5);
+
+        TypedQuery<ExpenseRepo> retrieveExpenseByDaysQuery = entityManager.createQuery(
+                "SELECT e FROM ExpenseRepo e WHERE e.user.user_id =: userID AND e.spend_at >= : recentExpense",
+                ExpenseRepo.class
+        );
+
+        retrieveExpenseByDaysQuery
+                .setParameter("userID", user_id)
+                .setParameter("recentExpense", minusLocalDate);
+
+        return retrieveExpenseByDaysQuery.getResultList();
     }
 }

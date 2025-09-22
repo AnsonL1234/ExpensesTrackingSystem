@@ -7,4 +7,6 @@ import java.util.List;
 public interface ExpenseService {
 
     List<ExpenseRepo> retrieveExpenseByUserId(int id);
+
+    List<ExpenseRepo> findExpenseByPast5Days(int id);
 }
