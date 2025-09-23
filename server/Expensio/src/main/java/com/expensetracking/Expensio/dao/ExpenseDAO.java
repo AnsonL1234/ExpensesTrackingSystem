@@ -2,15 +2,20 @@ package com.expensetracking.Expensio.dao;
 
 import com.expensetracking.Expensio.repository.ExpenseRepo;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
 
-public interface ExpenseDAO  {
+public interface ExpenseDAO extends JpaRepository<ExpenseRepo, Integer>  {
 
-    void save(ExpenseRepo expenseRepo);
+    @Query("select e from ExpenseRepo e where e.user.user_id= :userId")
+    List<ExpenseRepo> listExpenseByUserID(@Param("userId") int userId);
 
-    List<ExpenseRepo> listExpenseByUserID(int user_id);
-
-    List<ExpenseRepo> listOfExpenseByDays(int user_id);
-}
+    @Query("select e from ExpenseRepo e where e.user.user_id= :userId and month(e.spend_at)= :month and year(e.spend_at)= :year")
+    List<ExpenseRepo> listOfExpenseByMonthsAndYears(
+            @Param("userId") int userId,
+            @Param("month") int month,
+            @Param("year") int year);
+    }

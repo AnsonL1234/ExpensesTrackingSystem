@@ -15,20 +15,20 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<MainPage />}>
+          <Route element={<Header />}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />}  />
             <Route path="/feature" element={<Feature />}  />
           </Route>
 
-          <Route path='/mainPage' element={<MainPage />}>
-          
-          </Route>
+          {/* <Route path='/mainPage' element={<MainPage />}> */}
+            {/* <Route path="/dashboard" element={<Home />} /> */}
+          {/* </Route> */}
 
           {/* Render it without header */}
           <Route path="/login" element={<Login />}  />
           <Route path="/register" element={<Register />}  />
-          {/* <Route path="/mainPage" element={<MainPage />}  /> */}
+          <Route path="/mainPage" element={<MainPage />}  />
         </Routes>
       </BrowserRouter>
     </>

@@ -24,7 +24,7 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     @Override
-    public List<ExpenseRepo> findExpenseByPast5Days(int id) {
-        return expenseDAO.listOfExpenseByDays(id);
+    public List<ExpenseRepo> findExpenseMonthAndYear(int id, int month, int year) {
+        return expenseDAO.listOfExpenseByMonthsAndYears(id, month, year);
     }
 }

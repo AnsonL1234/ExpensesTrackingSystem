@@ -24,8 +24,12 @@ public class ExpensesController {
         return expenseService.retrieveExpenseByUserId(user_id);
     }
 
-    @GetMapping(value = "/recentExpense/{user_id}")
-    public List<ExpenseRepo> findRecentExpense(@PathVariable int user_id) {
-        return expenseService.findExpenseByPast5Days(user_id);
+    @GetMapping(value = "/recentExpense")
+    public List<ExpenseRepo> findRecentExpense(
+            @RequestParam int id,
+            @RequestParam int month,
+            @RequestParam int year
+    ) {
+        return expenseService.findExpenseMonthAndYear(id, month, year);
     }
 }

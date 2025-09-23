@@ -1,5 +1,10 @@
 @import url("../index.css");
 
+.mainPage {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
 .mainPage_left {
     color: var(--nav-text-clr);
     /* background-color: var(--primary-color); */

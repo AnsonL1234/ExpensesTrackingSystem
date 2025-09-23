@@ -8,5 +8,5 @@ public interface ExpenseService {
 
     List<ExpenseRepo> retrieveExpenseByUserId(int id);
 
-    List<ExpenseRepo> findExpenseByPast5Days(int id);
+    List<ExpenseRepo> findExpenseMonthAndYear(int id, int month, int year);
 }

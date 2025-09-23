@@ -22,7 +22,7 @@ export default function Login() {
                 const id = respon.data.user_id;
                 setResponseMessage("User is login successfully!");
                 setHasError(false);
-                // navigate("/mainPage", { state: {userId: id}})
+                navigate("/mainPage", { state: {userId: id}})
                 console.log(id); // debug
             })
             .catch((err) => {
@@ -70,7 +70,7 @@ export default function Login() {
                         Forgot your password? 
                     </a>
                     <br />
-                    <button type="submit" onClick={() => navigate("/mainPage")}>
+                    <button type="submit" >
                         Login
                     </button>
                 </form>
