@@ -7,9 +7,10 @@
   --btn-hover-color: #589d58;
   --navbar-color: #496049;
 
-  --primary-text-clr: #000000;
+  --primary-text-clr: #242323;
+  --secondary-text-clr: #302f2f;
   --nav-text-clr: #545454;
-  --nav-hover-clr: #f6f6f6;
+  --light-gray: #dbd7d751;
 }
 
 body {

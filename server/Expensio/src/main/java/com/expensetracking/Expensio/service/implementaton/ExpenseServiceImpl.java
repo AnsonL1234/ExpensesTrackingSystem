@@ -27,4 +27,16 @@ public class ExpenseServiceImpl implements ExpenseService {
     public List<ExpenseRepo> findExpenseMonthAndYear(int id, int month, int year) {
         return expenseDAO.listOfExpenseByMonthsAndYears(id, month, year);
     }
+
+    @Override
+    public List<ExpenseRepo> retrieveExpenseByPurpose(int userId, String purpose, int month, int year) {
+        return expenseDAO.findExpenseByPurpose(userId, purpose, month, year);
+    }
+
+    @Override
+    public List<ExpenseRepo> retrieveExpenseByTopCategory(int userId, int year) {
+        return expenseDAO.findTheTopCategory(userId, year);
+    }
+
+
 }

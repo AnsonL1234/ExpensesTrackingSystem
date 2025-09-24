@@ -32,4 +32,19 @@ public class ExpensesController {
     ) {
         return expenseService.findExpenseMonthAndYear(id, month, year);
     }
+
+    @GetMapping(value = "/expense/expenseByPurpose")
+    public List<ExpenseRepo> findExpenseByPurpose(
+            @RequestParam int id,
+            @RequestParam String purpose,
+            @RequestParam int month,
+            @RequestParam int year
+    ) {
+        return expenseService.retrieveExpenseByPurpose(id, purpose, month, year);
+    }
+
+    @GetMapping(value = "/expense/expenseByTopCategory")
+    public List<ExpenseRepo> findExpenseByTopCategory(@RequestParam int id, @RequestParam int year) {
+        return  expenseService.retrieveExpenseByTopCategory(id, year);
+    }
 }

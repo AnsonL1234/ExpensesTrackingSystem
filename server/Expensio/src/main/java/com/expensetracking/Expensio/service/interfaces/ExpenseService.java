@@ -9,4 +9,8 @@ public interface ExpenseService {
     List<ExpenseRepo> retrieveExpenseByUserId(int id);
 
     List<ExpenseRepo> findExpenseMonthAndYear(int id, int month, int year);
+
+    List<ExpenseRepo> retrieveExpenseByPurpose(int userId, String purpose, int month, int year);
+
+    List<ExpenseRepo> retrieveExpenseByTopCategory(int userId, int year);
 }

@@ -1,4 +1,6 @@
-import DashboardPanel from "./dashboard.panel";
+import DashboardPanel from "./dashboard_components/dashboard.totalExpensePanel"
+import DashboardTransactionPanel from "./dashboard_components/dashboard.totalNumberTrans"
+import DashboardTopCategoryPanel from "./dashboard_components/dashboard.topCategoryPanel"
 import { useState } from "react";
 import './dashboard.css'
 import { useLocation } from "react-router-dom";
@@ -19,6 +21,7 @@ export default function DashboardPage() {
                     id="year"
                     value={year}
                     onChange={(e) => setYear(e.target.value)}
+                    className="monthDropdown"
                 >
                     <option value={currentYear - 2}>{currentYear - 2}</option>
                     <option value={currentYear - 1}>{currentYear - 1}</option>
@@ -29,6 +32,8 @@ export default function DashboardPage() {
             <div className="dashboard_left">
                 <div className="dashboard_top_left">
                     <DashboardPanel userId={userId} year={year}/>
+                    <DashboardTransactionPanel userId={userId} purpose={"Transaction"}  year={year}/>
+                    <DashboardTopCategoryPanel userId={userId} year={year}/>
                 </div>
             </div>
             <div className="dashboard_right">
