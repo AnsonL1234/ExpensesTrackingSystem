@@ -86,7 +86,13 @@ or
 **GET Request**
 ```sql
 GET -> /api/user/users -> Fetch all the user
-GET -> /api/user/expense/{user_id} -> Fetch expense with user_id 
+GET -> /api/user/expense/{user_id} -> Fetch expense with user_id
+
+# Get all expense by userID and take that as a parameters
+GET -> /api/user/expense/{userID} -> Fetch all of expense by userID
+
+# Getting a list of expenses by user ID, month, and year which take those three variable as a parameters
+GET -> /api/user/expense/totalExpenses -> Fetch totalExpenses
 ```
 
 **POST Request**
