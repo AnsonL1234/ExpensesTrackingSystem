@@ -4,7 +4,7 @@
     width: 200px;
     height: 120px;
     padding: 5px;
-    background-color: rgb(110, 139, 164);
+    background-color: var(--light-gray);
     border-radius: 5px;
 }
 
@@ -12,6 +12,13 @@
     display: flex;
     align-items: center;
     height: 20px;
+}
+
+.monthDropdown {
+    margin-left: 10px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid gray;
 }
 
 .line_graph {

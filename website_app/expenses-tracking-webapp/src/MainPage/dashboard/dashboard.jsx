@@ -1,9 +1,12 @@
 import DashboardPanel from "./dashboard.panel";
 import { useState } from "react";
 import './dashboard.css'
+import { useLocation } from "react-router-dom";
 
 export default function DashboardPage() {
 
+    const location = useLocation();
+    const userId = location.state?.userId || 1;
     const currentYear = new Date().getFullYear();
     const [year, setYear] = useState(currentYear);
 
@@ -25,7 +28,7 @@ export default function DashboardPage() {
             <p></p>
             <div className="dashboard_left">
                 <div className="dashboard_top_left">
-                    <DashboardPanel year={year}/>
+                    <DashboardPanel userId={userId} year={year}/>
                 </div>
             </div>
             <div className="dashboard_right">

@@ -24,7 +24,7 @@ public class ExpensesController {
         return expenseService.retrieveExpenseByUserId(user_id);
     }
 
-    @GetMapping(value = "/recentExpense")
+    @GetMapping(value = "/expense/totalExpenses")
     public List<ExpenseRepo> findRecentExpense(
             @RequestParam int id,
             @RequestParam int month,

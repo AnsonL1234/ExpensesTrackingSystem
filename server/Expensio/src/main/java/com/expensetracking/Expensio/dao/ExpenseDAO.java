@@ -17,5 +17,6 @@ public interface ExpenseDAO extends JpaRepository<ExpenseRepo, Integer>  {
     List<ExpenseRepo> listOfExpenseByMonthsAndYears(
             @Param("userId") int userId,
             @Param("month") int month,
-            @Param("year") int year);
-    }
+            @Param("year") int year
+    );
+}

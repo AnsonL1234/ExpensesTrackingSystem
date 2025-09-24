@@ -1,6 +1,5 @@
 import { Line } from "react-chartjs-2";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import axios from "axios";
 import '../../components/panel.css'
 
@@ -28,17 +27,15 @@ import legend from "chart/lib/legend";
   Legend
 );
 
-export default function DashboardPanel({year}) {
+export default function DashboardPanel({userId, year}) {
 
-    const location = useLocation();
-    const userId = location.state?.userId || 1;
     const currentMonth = new Date().getMonth() + 1; // it return 0 - 11 so 11 + 1 = 12
     const [month, setMonth] = useState(currentMonth); // set the default
     const [expense, setExpense] = useState([]);
 
     useEffect(() => {
         axios
-        .get(`http://localhost:7070/api/user/recentExpense?id=${userId}&month=${month}&year=${year}`)
+        .get(`http://localhost:7070/api/user/expense/totalExpenses?id=${userId}&month=${month}&year=${year}`)
         .then((res) => {
             setExpense(res.data || []);
             console.log(res.data);
@@ -102,6 +99,7 @@ export default function DashboardPanel({year}) {
                         id="months" 
                         value={month}
                         onChange={(e) => setMonth(e.target.value)}
+                        className="monthDropdown"
                     >
                         <option value={1}>January</option>
                         <option value={2}>February</option>
