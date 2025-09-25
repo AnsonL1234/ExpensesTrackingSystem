@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ExpenseService {
 
-    List<ExpenseRepo> retrieveExpenseByUserId(int id);
+    List<ExpenseRepo> retrieveExpenseByUserIdAndYear(int id, int year);
 
     List<ExpenseRepo> findExpenseMonthAndYear(int id, int month, int year);
 

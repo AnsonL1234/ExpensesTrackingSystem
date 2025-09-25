@@ -19,8 +19,8 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     @Override
-    public List<ExpenseRepo> retrieveExpenseByUserId(int id) {
-        return expenseDAO.listExpenseByUserID(id);
+    public List<ExpenseRepo> retrieveExpenseByUserIdAndYear(int id, int year) {
+        return expenseDAO.listExpenseByUserIDAndYears(id, year);
     }
 
     @Override

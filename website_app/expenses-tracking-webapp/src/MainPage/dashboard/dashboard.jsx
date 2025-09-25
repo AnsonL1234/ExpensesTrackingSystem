@@ -1,6 +1,7 @@
 import DashboardPanel from "./dashboard_components/dashboard.totalExpensePanel"
 import DashboardTransactionPanel from "./dashboard_components/dashboard.totalNumberTrans"
 import DashboardTopCategoryPanel from "./dashboard_components/dashboard.topCategoryPanel"
+import DashboardExpenseReportPanel from "./dashboard_components/dashboard.expenseReportPanel"
 import { useState } from "react";
 import './dashboard.css'
 import { useLocation } from "react-router-dom";
@@ -31,9 +32,22 @@ export default function DashboardPage() {
             <p></p>
             <div className="dashboard_left">
                 <div className="dashboard_top_left">
-                    <DashboardPanel userId={userId} year={year}/>
-                    <DashboardTransactionPanel userId={userId} purpose={"Transaction"}  year={year}/>
-                    <DashboardTopCategoryPanel userId={userId} year={year}/>
+                    <div className="dashboard_section1">
+                        <DashboardPanel userId={userId} year={year}/>
+                        <DashboardTransactionPanel userId={userId} purpose={"Transaction"}  year={year}/>
+                        <DashboardTopCategoryPanel userId={userId} year={year} />
+                    </div>
+                    <div className="dashboard_section2">
+                        <div className="dashboard_section2_top">
+                            <DashboardExpenseReportPanel userId={userId} year={year} />
+                        </div>
+                        <div className="dashhboard_section2_bottom">
+
+                        </div>
+                    </div>
+                    <div className="dashboard_section3">
+
+                    </div>
                 </div>
             </div>
             <div className="dashboard_right">

@@ -10,8 +10,8 @@ import java.util.List;
 
 public interface ExpenseDAO extends JpaRepository<ExpenseRepo, Integer>  {
 
-    @Query("select e from ExpenseRepo e where e.user.user_id= :userId")
-    List<ExpenseRepo> listExpenseByUserID(@Param("userId") int userId);
+    @Query("select e from ExpenseRepo e where e.user.user_id= :userId AND year(e.spend_at)= :year")
+    List<ExpenseRepo> listExpenseByUserIDAndYears(@Param("userId") int userId, @Param("year") int year);
 
     @Query("select e from ExpenseRepo e where e.user.user_id= :userId and month(e.spend_at)= :month and year(e.spend_at)= :year")
     List<ExpenseRepo> listOfExpenseByMonthsAndYears(

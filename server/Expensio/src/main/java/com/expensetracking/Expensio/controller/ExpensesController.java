@@ -19,9 +19,9 @@ public class ExpensesController {
         this.expenseService = expenseService;
     }
 
-    @GetMapping(value = "/expense/{user_id}")
-    public List<ExpenseRepo> retrieveExpenseByUserID(@PathVariable int user_id) {
-        return expenseService.retrieveExpenseByUserId(user_id);
+    @GetMapping(value = "/expense/expenses")
+    public List<ExpenseRepo> retrieveExpenseByUserIDAndYear(@RequestParam int user_id, @RequestParam int year) {
+        return expenseService.retrieveExpenseByUserIdAndYear(user_id, year);
     }
 
     @GetMapping(value = "/expense/totalExpenses")
