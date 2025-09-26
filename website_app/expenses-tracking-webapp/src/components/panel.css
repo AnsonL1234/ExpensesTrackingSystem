@@ -1,13 +1,11 @@
 @import url("../index.css");
 
 .totalAmountPanel {
-    width: 245px;
+    width: 290px;
     height: 130px;
-    padding: 5px;
-    margin-right: 25px;
     font-family: var(--text-front);
-    color: var(--primary-text-clr);
-    background-color: var(--light-gray);
+    color: var(--text-clr);
+    background-color: var(--panel-background-clr);
     border-radius: 6px;
 }
 
@@ -16,17 +14,19 @@
     align-items: center;
     width: 100%;
     height: 20px;
-    margin-left: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .monthDropdown {
-    width: 70px;
+    width: clamp(20px 4vw, 70px);
     height: 18px;
     margin-left: 10px;
     font-size: 9px;
-    color: var(--nav-text-clr);
+    color: var(--text-clr);
+    background-color: var(--secondary-background-clr);
     border-radius: 5px;
-    border: 1px solid var(--light-gray);
+    border: 1px solid var(--secondary-background-clr);
 }
 
 .monthDropdown:focus {
@@ -55,7 +55,28 @@
 
 .price {
     margin: 0;
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
     font-size: 14px;
+    color: var(--primary-text-clr);
+}
+
+.expenseReportPanel {
+    height: 353px;
+    margin-top: 15px;
+    color: var(--text-clr);
+    background-color: var(--panel-background-clr);
+    border-radius: 6px;
+}
+
+.multiLineChart {
+    height: 300px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.multiLineChart canvas {
+    display: block;
 }

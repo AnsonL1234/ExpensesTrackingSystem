@@ -31,24 +31,22 @@ export default function DashboardPage() {
             </div>
             <p></p>
             <div className="dashboard_left">
-                <div className="dashboard_top_left">
                     <div className="dashboard_section1">
                         <DashboardPanel userId={userId} year={year}/>
                         <DashboardTransactionPanel userId={userId} purpose={"Transaction"}  year={year}/>
                         <DashboardTopCategoryPanel userId={userId} year={year} />
                     </div>
                     <div className="dashboard_section2">
-                        <div className="dashboard_section2_top">
+                        <div className="dashboard_section2_left">
                             <DashboardExpenseReportPanel userId={userId} year={year} />
                         </div>
-                        <div className="dashhboard_section2_bottom">
-
+                        <div className="dashhboard_section2_right">
+                        
                         </div>
                     </div>
                     <div className="dashboard_section3">
 
                     </div>
-                </div>
             </div>
             <div className="dashboard_right">
 

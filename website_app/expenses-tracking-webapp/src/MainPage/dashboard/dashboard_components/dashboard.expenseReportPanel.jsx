@@ -42,38 +42,7 @@ export default function DashboardExpenseReportPanel({userId, year}) {
              console.log(err);
         })
 
-    }, [userId, year])
-
-    const chartOption = {
-        responsive: true,
-            interaction: {
-                mode: 'index',
-                intersect: false,
-                },
-        stacked: false,
-        maintainAspectRatio: true,
-        
-        plugins: {
-            legend: {display: true},
-            tooltip: {display: true}
-        },
-        scales: {
-            x: {
-                type: 'linear',
-                display: true,
-            },
-            y: {
-                type: 'linear',
-                display: true,
-                position: 'left',
-            },
-            y1: {
-                type: 'linear',
-                display: true,
-                position: 'right',
-            }
-        }
-    };
+    }, [userId, year]);
 
     const labels = [
         "January", "February", "March", "April", "May", "June",
@@ -93,8 +62,8 @@ export default function DashboardExpenseReportPanel({userId, year}) {
     });
 
     const datasets = Object.keys(grouped).map((purpose, index) => ({
-        labels: purpose,
-        datasets: grouped[purpose],
+        label: purpose,
+        data: grouped[purpose],
         fill: false,
         borderColor: `hsl(${index * 60 % 360}, 70%, 50%)`,
         backgroundColor: `hsl(${index * 60 % 360}, 70%, 50%)`,
@@ -103,11 +72,75 @@ export default function DashboardExpenseReportPanel({userId, year}) {
 
     const chartData = {labels, datasets};
 
+    const chartOption = {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+            mode: 'index',
+            intersect: false,
+        },
+        stacked: false,
+        maintainAspectRatio: true,
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    usePointStyle: true, // use point style instead of box
+                    pointStyle: "circle", // make it circle
+                    boxWidth: 6,  // smaller width
+                    boxHeight: 6, // smaller height
+                    padding: 18,  // space between text & dot
+                    font: {
+                        size: 8, // make text smaller
+                        weight: 'normal' 
+                    }
+                }
+            },
+            tooltip: {
+                display: false, 
+                enabled: true
+            }
+        },
+        scales: {
+            x: {
+                type: 'category',
+                display: true,
+                grid: {display: false},
+                ticks: {
+                    font: {
+                        size: 8,
+                    }
+                }
+            },
+            y: {
+                type: 'linear',
+                display: true,
+                position: 'left',
+                beginAtZero: true,
+                ticks: {
+                    font: {
+                        size: 8,
+                    }
+                }
+            }
+        },
+        elements: {
+            line: {
+                tension: 0.3,
+                borderWidth: 0.8,
+            }, 
+            point: {
+                radius: 1,
+                hitRadius: 10
+            }
+        }
+    };
+
     return (
         <>
             <div className="expenseReportPanel">
                 <div className="topPanel">
-                    <h6>Expense Report By Categories</h6>
+                    <h6 className="panel_title">Bar Chart Expense Report By Categories</h6>
                 </div>
                 <div className="multiLineChart">
                     <Line key={expense.length} data={chartData} options={chartOption}/>

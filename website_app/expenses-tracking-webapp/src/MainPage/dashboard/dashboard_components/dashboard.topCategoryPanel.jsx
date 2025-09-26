@@ -97,7 +97,7 @@ export default function DashboardTopCategoryPanel({userId, year}) {
                         {!hasError ? purpose : "N/A"}
                     </div>
                 </div>
-                <h6 className="price">$ {expense.reduce((sum, ex) => sum + (ex.amount || 0), 0)}</h6>
+                <span className="price">$ {expense.reduce((sum, ex) => sum + (ex.amount || 0), 0)}</span>
                 <div className="line_graph">
                     <Line key={expense.length} data={chartData} options={chartOption}/>
                 </div>

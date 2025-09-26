@@ -49,7 +49,6 @@ export default function DashboardTransactionPanel({userId, purpose, year}) {
 
     const chartOption = {
         responsive: true,
-        maintainAspectRatio: false,
         plugins: {
             legend: {display: false},
             tooltip: {display: false}
@@ -114,7 +113,7 @@ export default function DashboardTransactionPanel({userId, purpose, year}) {
                         <option value={12}>December</option>
                     </select>
                 </div>
-                <h6 className="price">$ {expense.reduce((sum, ex) => sum + (ex.amount || 0), 0)}</h6>
+                <span className="price">$ {expense.reduce((sum, ex) => sum + (ex.amount || 0), 0)}</span>
                 <div className="line_graph">
                     <Line key={expense.length} data={chartData} options={chartOption}/>
                 </div>

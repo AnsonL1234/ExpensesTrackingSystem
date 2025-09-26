@@ -9,8 +9,16 @@
 
   --primary-text-clr: #242323;
   --secondary-text-clr: #302f2f;
-  --nav-text-clr: #545454;
-  --light-gray: #dbd7d751;
+  --text-clr: #545454;
+
+  --primary-background-clr: #fcfdfd;
+  --secondary-background-clr: #EDEFF3;
+  --panel-background-clr: #fcfdfd;
+  --page-border-clr: #9fa0b5;
+
+  --nav-text-clr: #c6d1d7;
+  --nav-hover-bacground-clr: #edeff3;
+  --nav-hover-clr: #555663;
 }
 
 body {

@@ -2,6 +2,9 @@
 // import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import DashboardPage from "./dashboard/dashboard";
+import { MdDashboard } from "react-icons/md";
+import { TbReportMoney } from "react-icons/tb";
+import { GrTransaction } from "react-icons/gr";
 import "./MainPage.css"
 
 
@@ -35,9 +38,24 @@ const MainPage = () => {
                     Expensio
                 </h2>
                 <nav className="navigator-left">
-                    <Link to="/" className="nav_link">Dashboard</Link>
-                    <Link to="/" className="nav_link">Expense</Link>
-                    <Link to="/" className="nav_link">Transaction</Link>
+                    <Link to="/" className="nav_link">
+                        <span className="nav-icons">
+                            <MdDashboard size={18} style={{ marginRight: "5px" }}/> 
+                            Dashboard
+                        </span>
+                    </Link>
+                    <Link to="/" className="nav_link">
+                        <span className="nav-icons">
+                            <TbReportMoney size={18} style={{ marginRight: "5px" }} />
+                            Expense
+                        </span>
+                    </Link>
+                    <Link to="/" className="nav_link">
+                        <span className="nav-icons">
+                            <GrTransaction style={{ marginRight: "5px" }} />
+                            Transaction
+                        </span>
+                    </Link>
                 </nav>
             </div>
             <div className="mainPage_right">

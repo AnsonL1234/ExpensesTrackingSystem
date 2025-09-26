@@ -1,15 +1,19 @@
 @import url("../../index.css");
 
-.dashboard_section1 {
-    height: 30px;
-    margin-top: 20px;
+.dashboard_top {
     display: flex;
     align-items: center;
 }
 
-.dashboard_top_left {
+.dashboard_left {
+    width: 900px;
+    flex-direction: column;
+}
+
+.dashboard_section1 {
+    margin-top: 20px;
     display: flex;
-    
+    justify-content: space-between;
 }
 
 .topCategory {

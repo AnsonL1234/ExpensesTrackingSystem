@@ -1,14 +1,32 @@
 @import url("../index.css");
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 .mainPage {
-    display: grid;
-    grid-template-columns: 200px 1fr;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
 
 .mainPage_left {
     color: var(--nav-text-clr);
-    /* background-color: var(--primary-color); */
+    background-color: var(--primary-background-clr);
     width: clamp(120px, 12vw, 250px);
+    display: flex;
+    flex-direction: column;
+    border: 0.8 solid;
+    border-color: var(--nav-text-clr);
+}
+
+.mainPage_right {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--secondary-background-clr);
+    overflow-y: auto;
 }
 
 .logo-text {
@@ -24,22 +42,37 @@
 .navigator-left {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    padding: 25px;
+    padding: 15px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
 }
 
 .nav_link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* center vertically */
+    align-items: flex-start; /* align to left */
+    text-decoration: none;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 100%; /* take full height of sidebar */
     color: var(--nav-text-clr);
     font-family: var(--title-front);
-    align-items: center;
     font-size: 12px;
-    padding-left: 10px;
-    margin-bottom: 15px;
-    text-decoration: none;
 }
 
 .nav_link:hover {
     border-radius: 3px;
-    background-color: var(--nav-hover-clr);
-    opacity: 0.8;
+    color: var(--nav-hover-clr);
+    background-color: var(--nav-hover-bacground-clr);
+    opacity: 0.9;
+}
+
+.nav_link:focus {
+    outline: 10px;
+    box-shadow: 10px;
 }
