@@ -13,19 +13,19 @@ html, body {
 }
 
 .mainPage_left {
-    color: var(--nav-text-clr);
+    color: var(--primary-text-clr);
     background-color: var(--primary-background-clr);
     width: clamp(120px, 12vw, 250px);
     display: flex;
     flex-direction: column;
     border: 0.8 solid;
-    border-color: var(--nav-text-clr);
+    border-color: var(--primary-text-clr);
 }
 
 .mainPage_right {
     flex: 1;
     padding: 20px;
-    background-color: var(--secondary-background-clr);
+    background-color: var(--primary-text-clr);
     overflow-y: auto;
 }
 
@@ -60,15 +60,15 @@ html, body {
     margin-top: 5px;
     margin-bottom: 5px;
     height: 100%; /* take full height of sidebar */
-    color: var(--nav-text-clr);
+    color: var(--primary-text-clr);
     font-family: var(--title-front);
     font-size: 12px;
 }
 
 .nav_link:hover {
     border-radius: 3px;
-    color: var(--nav-hover-clr);
-    background-color: var(--nav-hover-bacground-clr);
+    color: var(--primary-hover-clr);
+    background-color: var(--primary-hover-bacground-clr);
     opacity: 0.9;
 }
 

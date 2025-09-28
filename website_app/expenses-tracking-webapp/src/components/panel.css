@@ -5,7 +5,7 @@
     height: 130px;
     font-family: var(--text-front);
     color: var(--text-clr);
-    background-color: var(--panel-background-clr);
+    background-color: var(--primary-background-clr);
     border-radius: 6px;
 }
 
@@ -58,14 +58,15 @@
     margin-top: 10px;
     margin-left: 10px;
     font-size: 14px;
-    color: var(--primary-text-clr);
+    color: var(--primary-hover-clr);
 }
 
 .expenseReportPanel {
+    width: 100%;
     height: 353px;
     margin-top: 15px;
     color: var(--text-clr);
-    background-color: var(--panel-background-clr);
+    background-color: var(--primary-background-clr);
     border-radius: 6px;
 }
 
@@ -79,4 +80,8 @@
 
 .multiLineChart canvas {
     display: block;
+}
+
+.barChart {
+    width: 290px;
 }

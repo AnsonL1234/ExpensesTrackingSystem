@@ -74,7 +74,6 @@ export default function DashboardExpenseReportPanel({userId, year}) {
 
     const chartOption = {
         responsive: true,
-        maintainAspectRatio: false,
         interaction: {
             mode: 'index',
             intersect: false,
@@ -140,7 +139,7 @@ export default function DashboardExpenseReportPanel({userId, year}) {
         <>
             <div className="expenseReportPanel">
                 <div className="topPanel">
-                    <h6 className="panel_title">Bar Chart Expense Report By Categories</h6>
+                    <h6 className="panel_title">Mutiline Chart Expense Report By Categories</h6>
                 </div>
                 <div className="multiLineChart">
                     <Line key={expense.length} data={chartData} options={chartOption}/>

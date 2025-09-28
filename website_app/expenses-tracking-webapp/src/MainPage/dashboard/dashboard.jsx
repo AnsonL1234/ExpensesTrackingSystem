@@ -2,6 +2,7 @@ import DashboardPanel from "./dashboard_components/dashboard.totalExpensePanel"
 import DashboardTransactionPanel from "./dashboard_components/dashboard.totalNumberTrans"
 import DashboardTopCategoryPanel from "./dashboard_components/dashboard.topCategoryPanel"
 import DashboardExpenseReportPanel from "./dashboard_components/dashboard.expenseReportPanel"
+import DashboardBarChart from "./dashboard_components/dashboard.barChart"
 import { useState } from "react";
 import './dashboard.css'
 import { useLocation } from "react-router-dom";
@@ -41,7 +42,7 @@ export default function DashboardPage() {
                             <DashboardExpenseReportPanel userId={userId} year={year} />
                         </div>
                         <div className="dashhboard_section2_right">
-                        
+                            <DashboardBarChart userId={userId} year={year} />
                         </div>
                     </div>
                     <div className="dashboard_section3">

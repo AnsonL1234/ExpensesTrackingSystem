@@ -7,21 +7,23 @@
   --btn-hover-color: #589d58;
   --navbar-color: #496049;
 
-  --primary-text-clr: #242323;
+  
   --secondary-text-clr: #302f2f;
   --text-clr: #545454;
 
   --primary-background-clr: #fcfdfd;
-  --secondary-background-clr: #EDEFF3;
+  --secondary-background-clr: #edeff3;
   --panel-background-clr: #fcfdfd;
   --page-border-clr: #9fa0b5;
 
-  --nav-text-clr: #c6d1d7;
-  --nav-hover-bacground-clr: #edeff3;
-  --nav-hover-clr: #555663;
+  --primary-text-clr: #c6d1d7;
+  --primary-hover-bacground-clr: #edeff3;
+  --primary-hover-clr: #555663;
 }
 
 body {
   font-family: var(--text-front);
   margin-top: 0;
+  border: 0.8px solid var(--page-border-clr);
+  border-radius: 8px;
 }
