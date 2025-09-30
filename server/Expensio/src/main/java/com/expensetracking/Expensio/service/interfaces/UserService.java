@@ -16,4 +16,5 @@ public interface UserService {
     boolean isPasswordExist(String password);
 
     Optional<UserRepo> getUserByUsername(String username);
+
 }

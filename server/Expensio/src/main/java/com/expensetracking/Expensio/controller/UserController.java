@@ -27,6 +27,8 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+
+
     @PostMapping(value = "/register")
     public ResponseEntity<UserRepo> register(@RequestBody UserRepo user) {
 

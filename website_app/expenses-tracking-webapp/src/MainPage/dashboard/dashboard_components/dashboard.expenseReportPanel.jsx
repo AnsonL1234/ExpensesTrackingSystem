@@ -62,7 +62,6 @@ export default function DashboardExpenseReportPanel({userId, year}) {
     });
 
     const datasets = Object.keys(grouped).map((purpose, index) => ({
-        label: purpose,
         data: grouped[purpose],
         fill: false,
         borderColor: `hsl(${index * 60 % 360}, 70%, 50%)`,
@@ -82,18 +81,7 @@ export default function DashboardExpenseReportPanel({userId, year}) {
         maintainAspectRatio: true,
         plugins: {
             legend: {
-                display: true,
-                labels: {
-                    usePointStyle: true, // use point style instead of box
-                    pointStyle: "circle", // make it circle
-                    boxWidth: 6,  // smaller width
-                    boxHeight: 6, // smaller height
-                    padding: 18,  // space between text & dot
-                    font: {
-                        size: 8, // make text smaller
-                        weight: 'normal' 
-                    }
-                }
+                display: false
             },
             tooltip: {
                 display: false, 
@@ -141,7 +129,7 @@ export default function DashboardExpenseReportPanel({userId, year}) {
                 <div className="topPanel">
                     <h6 className="panel_title">Mutiline Chart Expense Report By Categories</h6>
                 </div>
-                <div className="multiLineChart">
+                <div className="lineChart">
                     <Line key={expense.length} data={chartData} options={chartOption}/>
                 </div>
             </div>

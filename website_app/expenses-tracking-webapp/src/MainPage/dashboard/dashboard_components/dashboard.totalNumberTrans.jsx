@@ -1,30 +1,6 @@
-import { Line } from "react-chartjs-2";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import '../../../components/panel.css'
-
-import { 
-    Chart as ChartJs,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    scales,
-    elements
- } from "chart.js"
-
- ChartJs.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
 
 export default function DashboardTransactionPanel({userId, purpose, year}) {
 
@@ -91,7 +67,7 @@ export default function DashboardTransactionPanel({userId, purpose, year}) {
         <>
             <div className="totalAmountPanel">
                 <div className="topPanel">
-                    <h6>Total Number of Transactions</h6>
+                    <h6>Transaction</h6>
                     <select 
                         name="months" 
                         id="months" 
@@ -114,9 +90,6 @@ export default function DashboardTransactionPanel({userId, purpose, year}) {
                     </select>
                 </div>
                 <span className="price">$ {expense.reduce((sum, ex) => sum + (ex.amount || 0), 0)}</span>
-                <div className="line_graph">
-                    <Line key={expense.length} data={chartData} options={chartOption}/>
-                </div>
             </div>
         </>
     );

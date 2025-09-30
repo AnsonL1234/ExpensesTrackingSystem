@@ -32,20 +32,19 @@ export default function Login() {
     };
 
     return (
-        <>
+        <div className="loginPage">
             <a onClick={() => navigate(-1)} className="backPointer">
                 <img src={LeftArrow}  />
                 back
             </a>
 
             <div className="loginForm">
-                <h2>
+                <h2 className="header_text">
                     Sign in to your account
                 </h2>
-                <hr />
-                <form  onSubmit={handleLoginSubmit}>
+                <form onSubmit={handleLoginSubmit}>
                     <label htmlFor="username">Username</label>
-                    <br />
+ 
                     <input 
                         id="username"
                         type="text" 
@@ -55,9 +54,9 @@ export default function Login() {
                         className="text-input"
                     />
 
-                    <br />
+  
                     <label htmlFor="password">Password</label>
-                    <br />
+
                     <input 
                         id="password"
                         type="password" 
@@ -66,15 +65,13 @@ export default function Login() {
                         onChange={(e) => setPassword(e.target.value)} 
                     />
 
-                    <a onClick={() => navigate("/forgotPassword")} >
+                    <a onClick={() => navigate("/forgotPassword")} className="forgotPassword">
                         Forgot your password? 
                     </a>
-                    <br />
                     <button type="submit" >
                         Login
                     </button>
                 </form>
-
                 <div className="divider">
                     <span>or</span>
                 </div>
@@ -83,6 +80,7 @@ export default function Login() {
                     Create An Account
                 </button>
             </div>
+            
 
             <div className="error_panel">
                 {hasError && (
@@ -91,6 +89,6 @@ export default function Login() {
                     </p>
                 )}
             </div>
-        </>
+        </div>
     );
 }

@@ -33,25 +33,24 @@ export default function Register() {
         
         setIsPasswordCorrect(true);
 
-        axios
-            .post(`http://localhost:7070/api/user/register`, newUser)
-            .then((response) => {
-                setResponseMessage("User register successfully!");
-                setHasError(false);
-                console.log(response.data)
-            })
-            .catch((error) => {
-                setResponseMessage("Oops! Something went wrong, please try again!");
-                setHasError(true);
-                console.log(error.response ? error.response.data : error.responseMessage)
-            });
+        // axios
+        //     .post(`http://localhost:7070/api/user/register`, newUser)
+        //     .then((response) => {
+        //         setResponseMessage("User register successfully!");
+        //         setHasError(false);
+        //         navigate("/register2");
+        //     })
+        //     .catch((error) => {
+        //         setResponseMessage("Oops! Something went wrong, please try again!");
+        //         setHasError(true);
+        //     });
         
-
+        navigate("/register2");
     };
 
 
     return (
-        <>
+        <div className="registerPage" >
             <a onClick={() => navigate(-1)} className="backPointer">
                 <img src={LeftArrow}  />
                 back
@@ -59,7 +58,7 @@ export default function Register() {
 
             <div className="registerForm">
 
-                <h2>Register Account</h2>
+                <h2 className="header_text">Register Account</h2>
                 <form onSubmit={handleRegisterSubmit}>
                     <label htmlFor="username">Username</label>
                     <input 
@@ -90,16 +89,16 @@ export default function Register() {
                     />
 
                     <button type="submit">
-                        Sign Up
+                        Next Step
                     </button>
+                </form>
 
-                    <div className="divider">
+                <div className="divider">
                         <span>or</span>
                     </div>
 
-                    <p className="register-footer">Already have an account?<a onClick={() => navigate("/login")}>Login</a></p>
-                </form>
+                    <p className="register_text">Already have an account?<a onClick={() => navigate("/login")}>Login</a></p>
             </div>
-        </>
+        </div>
     );
 }

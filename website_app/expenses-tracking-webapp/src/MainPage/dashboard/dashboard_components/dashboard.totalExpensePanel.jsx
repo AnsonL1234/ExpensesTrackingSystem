@@ -1,31 +1,6 @@
-import { Line } from "react-chartjs-2";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import '../../../components/panel.css'
-
-import { 
-    Chart as ChartJs,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    scales,
-    elements
- } from "chart.js"
-import legend from "chart/lib/legend";
-
- ChartJs.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
 
 export default function DashboardPanel({userId, year}) {
 
@@ -47,46 +22,6 @@ export default function DashboardPanel({userId, year}) {
              console.log("Month: ", currentMonth);
         })
     }, [month, year])
-
-    const chartOption = {
-        responsive: true,
-        plugins: {
-            legend: {display: false},
-            tooltip: {display: false}
-        },
-        scales: {
-            x: {
-                display: false, 
-                grid: {display: false}
-            },
-            y: {
-                display: false, 
-                grid: {display: false}
-            }
-        },
-        elements: {
-            line: {
-                tension: 0.3,
-                borderColor: "red", 
-                borderWidth: 1
-            }, 
-            point: {
-                radius: 2,
-                pointBackgroundColor: "red", 
-                hitRadius: 10
-            }
-        }
-    };
-
-    const chartData = {
-        labels: expense.map(ex => ex.spend_at?.split("T")[0] ?? "N/A"),
-        datasets: [
-            {
-                label: "$ ",
-                data: expense.map((ex) => ex.amount)
-            }
-        ]
-    };
 
     return (
         <>
@@ -115,9 +50,6 @@ export default function DashboardPanel({userId, year}) {
                     </select>
                 </div>
                 <span className="price">$ {expense.reduce((sum, ex) => sum + (ex.amount || 0), 0.00)}</span>
-                <div className="line_graph">
-                    <Line key={expense.length} data={chartData} options={chartOption}/>
-                </div>
             </div>
         </>
     );
