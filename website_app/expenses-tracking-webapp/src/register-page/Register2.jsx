@@ -50,7 +50,8 @@ export default function Register2() {
         <div className="registerPage2">
 
             <div className="registerForm2">
-                <h2>Online Registration Form</h2>
+                <h2 className="head_text">Online Registration Form</h2>
+                <h6 className="section_title">Please fill in your info below</h6>
                 <form method="post" onClick={handleProfileSubmit}>
                     <section className="section1">
                         <div className="section_firstNameField">
@@ -62,16 +63,17 @@ export default function Register2() {
                             <input type="text" name="" id="" />
                         </div>
                     </section>
-                    <label htmlFor="">Date Of Birth</label>
-                    <input type="date" name="" id="" />
-                    <label htmlFor="">Email Address</label>
-                    <input type="text" name="" id="" />
-                    <section>
-                        <label htmlFor="">Phone Number</label>
-                        <div className="phoneType">
-                            <select name="" id="">
-
-                            </select>
+                    <section className="section2">
+                        <div className="field1">
+                            <label htmlFor="">Date Of Birth</label>
+                            <input type="date" name="" id="" />
+                        </div>
+                        <div className="field2">
+                            <label htmlFor="">Email Address</label>
+                            <input type="text" name="" id="" />
+                        </div>
+                        <div className="field3">
+                            <label htmlFor="">Phone Number</label>
                             <input type="number" name="" id="" />
                         </div>
                     </section>
