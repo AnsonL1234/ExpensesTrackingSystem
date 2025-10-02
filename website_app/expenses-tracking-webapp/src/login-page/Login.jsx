@@ -68,7 +68,7 @@ export default function Login() {
                     <a onClick={() => navigate("/forgotPassword")} className="forgotPassword">
                         Forgot your password? 
                     </a>
-                    <button type="submit" >
+                    <button type="submit" className="submit_button" >
                         Login
                     </button>
                 </form>

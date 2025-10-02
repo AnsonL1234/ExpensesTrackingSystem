@@ -1,6 +1,6 @@
 package com.expensetracking.Expensio.controller;
 
-import com.expensetracking.Expensio.repository.UserRepo;
+import com.expensetracking.Expensio.repository.User;
 import com.expensetracking.Expensio.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,18 +24,24 @@ public class UserController {
     }
 
     @GetMapping(value = "/users")
-    public List<UserRepo> getAllUsers() {
+    public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @GetMapping(value = "/findUser/{username}")
-    public ResponseEntity<UserRepo> getUser(@PathVariable("username") String username) {
-        Optional<UserRepo> userRepo = userService.getUserByUsername(username);
+    public ResponseEntity<User> getUser(@PathVariable("username") String username) {
+        Optional<User> userRepo = userService.getUserByUsername(username);
+        return new ResponseEntity<>(userRepo.orElseThrow(() -> new RuntimeException("User not found")), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/findUser")
+    public ResponseEntity<User> getUser(@RequestParam int userId) {
+        Optional<User> userRepo = userService.getUserById(userId);
         return new ResponseEntity<>(userRepo.orElseThrow(() -> new RuntimeException("User not found")), HttpStatus.OK);
     }
 
     @PostMapping(value = "/register")
-    public ResponseEntity<UserRepo> register(@RequestBody UserRepo user) {
+    public ResponseEntity<User> register(@RequestBody User user) {
 
         if (userService.isUserRegistered(user.getUsername()) || userService.isPasswordExist(user.getPassword()))
             return new ResponseEntity<>(HttpStatus.CONFLICT);

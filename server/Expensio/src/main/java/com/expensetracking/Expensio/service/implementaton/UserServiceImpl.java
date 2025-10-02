@@ -1,12 +1,11 @@
 package com.expensetracking.Expensio.service.implementaton;
 
 import com.expensetracking.Expensio.dao.UserDAO;
-import com.expensetracking.Expensio.repository.UserRepo;
+import com.expensetracking.Expensio.repository.User;
 import com.expensetracking.Expensio.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,12 +20,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserRepo> getAllUsers() {
+    public List<User> getAllUsers() {
         return userDAO.findAll();
     }
 
     @Override
-    public void registerUser(UserRepo user) {
+    public void registerUser(User user) {
         userDAO.save(user);
     }
 
@@ -41,12 +40,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<UserRepo> getUserByUsername(String username) {
+    public Optional<User> getUserByUsername(String username) {
         return userDAO.findByUsername(username);
     }
 
     @Override
-    public Optional<UserRepo> getUserById(int userId) {
+    public Optional<User> getUserById(int userId) {
         return userDAO.getUserInfo(userId);
     }
 

@@ -14,12 +14,12 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "user")
-public class UserRepo {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private int user_id;
+    private int userId;
 
     @Column(name = "username")
     private String username;
@@ -43,7 +43,7 @@ public class UserRepo {
                 }
     )
     @JsonBackReference
-    private ProfileRepo profile;
+    private Profile profile;
 
     @OneToMany(
             mappedBy = "user",
@@ -55,6 +55,6 @@ public class UserRepo {
             }
     )
     @JsonIgnore
-    private List<ExpenseRepo> expenses;
+    private List<Expense> expenses;
 
 }

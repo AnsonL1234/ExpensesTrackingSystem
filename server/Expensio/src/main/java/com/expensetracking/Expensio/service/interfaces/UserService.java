@@ -1,21 +1,21 @@
 package com.expensetracking.Expensio.service.interfaces;
 
-import com.expensetracking.Expensio.repository.UserRepo;
+import com.expensetracking.Expensio.repository.User;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
 
-    List<UserRepo> getAllUsers();
+    List<User> getAllUsers();
 
-    void registerUser(UserRepo user);
+    void registerUser(User user);
 
     boolean isUserRegistered(String username);
 
     boolean isPasswordExist(String password);
 
-    Optional<UserRepo> getUserByUsername(String username);
+    Optional<User> getUserByUsername(String username);
 
-    Optional<UserRepo> getUserById(int userId);
+    Optional<User> getUserById(int userId);
 }

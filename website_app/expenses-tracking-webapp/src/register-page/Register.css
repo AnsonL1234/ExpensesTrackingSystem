@@ -42,6 +42,7 @@ a:active {
 
 .register_text {
     margin: 0;
+    margin-top: 1rem;
     text-align: center;
     font-size: 11px;
     font-family: var(--text-front);
@@ -63,6 +64,7 @@ a:active {
 
 .section_title {
     margin: 0;
+    width: 100%;
     padding: calc(1rem / 3);
     margin-top: 1.5rem;
     margin-bottom: calc(1.5rem / 2);
@@ -101,6 +103,10 @@ a:active {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
+}
+
+.submit_button2 {
+    margin: 1rem auto 1rem;
 }
 
 .button_section {

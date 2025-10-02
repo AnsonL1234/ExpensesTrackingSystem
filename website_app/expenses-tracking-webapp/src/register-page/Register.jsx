@@ -77,16 +77,16 @@ export default function Register() {
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
 
-                    <button type="submit">
+                    <button type="submit" className="submit_button2">
                         Next Step
                     </button>
                 </form>
 
                 <div className="divider">
-                        <span>or</span>
-                    </div>
+                    <span>or</span>
+                </div>
 
-                    <p className="register_text">Already have an account?<a onClick={() => navigate("/login")}>Login</a></p>
+                <p className="register_text">Already have an account?<a onClick={() => navigate("/login")}>Login</a></p>
             </div>
         </div>
     );

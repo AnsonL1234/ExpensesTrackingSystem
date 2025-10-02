@@ -1,20 +1,19 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Register.css";
 
 export default function Register2() {
 
     const navigate = useNavigate();
-
     const location = useLocation();
+
     const { username, password } = location.state || {};
-    const [userId, setUserId] = useState(0);
     const [firstname, setFirstName] = useState("");
     const [surname, setSurname] = useState("");
     const [dob, setDob] = useState("");
     const [email_address, setEmail_Address] = useState("");
-    const [phone_number, setPhone_Number] = useState("");
+    const [phone_number, setPhone_Number] = useState(0);
     const [address1, setAddress1] = useState("");
     const [address2, setAddress2] = useState("");
     const [address3, setAddress3] = useState("");
@@ -23,44 +22,42 @@ export default function Register2() {
     const [postcode, setPostcode] = useState("");
     const [error, hasError] = useState(false);
 
-    const handleRegistrationSubmit = (event) => {
+    const handleRegistrationSubmit = async (event) => {
         event.preventDefault();
 
-        const newProfile = {
-            firstname,
-            surname,
-            dob,        
-            email_address,
-            phone_number,
-            address1,
-            address2,
-            address3,
-            city,
-            town, 
-            postcode,
-            user: { userId: userId }
-        }
-        console.log(newProfile);
-        const newUser = {
-            username, 
-            password
-        }
+        try {
+            // step 1: register the user
+            const registerRes = await axios.post(`http://localhost:7070/api/user/register`, {username, password});
 
-        axios
-            .post(`http://localhost:7070/api/user/register`, newUser)
-            .then(() => {
-                return axios.get(`http://localhost:7070/api/user/findUser/${username}`)
-            })
-            .then((res) => {
-                setUserId(res.data.userId);
-                console.log("Retrieved User ID: " + userId);
-                hasError(false);
-                return axios.post(`http://localhost:7070/api/user/completeProfile/${userId}`, newProfile);
-            })
-            .catch(((err) => {
-                hasError(true);
-                console.error(err);
-            }));
+            // step 2: retrieve the user with it username 
+            const userRes = await axios.get(`http://localhost:7070/api/user/findUser/${registerRes.data.username}`);
+            const id = userRes.data.userId;
+
+            // step 3: complete profile with userId
+            const profileRes = await axios.post(`http://localhost:7070/api/user/completeProfile/${id}`, 
+                {
+                    firstname, 
+                    surname,
+                    dob,
+                    email_address,
+                    phone_number,
+                    address1,
+                    address2,
+                    address3,
+                    city,
+                    town,
+                    postcode
+                }
+            );
+            console.log("Profile Saved: ", profileRes);
+
+            hasError(false);
+            navigate("/login");
+
+        } catch (err) {
+            hasError(true);
+            console.log("Error: ", err)
+        }
     }
 
     return (
@@ -127,8 +124,8 @@ export default function Register2() {
                     </section>
 
                     <div className="button_section">
-                        <button className="return_button_style" type="submit" onClick={() => { navigate("/register") }}>Back</button>
-                        <button className="register_button" type="submit" onClick={() => { navigate("/login") }}>Complete Registration</button>
+                        <button type="button"  onClick={() => { navigate("/register") }}>Back</button>
+                        <button  type="submit" onClick={() => { navigate("/login") }}>Complete Registration</button>
                     </div>
                 </form>
             </div>

@@ -1,7 +1,7 @@
 package com.expensetracking.Expensio.service.implementaton;
 
 import com.expensetracking.Expensio.dao.ExpenseDAO;
-import com.expensetracking.Expensio.repository.ExpenseRepo;
+import com.expensetracking.Expensio.repository.Expense;
 import com.expensetracking.Expensio.service.interfaces.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,22 +19,22 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     @Override
-    public List<ExpenseRepo> retrieveExpenseByUserIdAndYear(int id, int year) {
+    public List<Expense> retrieveExpenseByUserIdAndYear(int id, int year) {
         return expenseDAO.listExpenseByUserIDAndYears(id, year);
     }
 
     @Override
-    public List<ExpenseRepo> findExpenseMonthAndYear(int id, int month, int year) {
+    public List<Expense> findExpenseMonthAndYear(int id, int month, int year) {
         return expenseDAO.listOfExpenseByMonthsAndYears(id, month, year);
     }
 
     @Override
-    public List<ExpenseRepo> retrieveExpenseByPurpose(int userId, String purpose, int month, int year) {
+    public List<Expense> retrieveExpenseByPurpose(int userId, String purpose, int month, int year) {
         return expenseDAO.findExpenseByPurpose(userId, purpose, month, year);
     }
 
     @Override
-    public List<ExpenseRepo> retrieveExpenseByTopCategory(int userId, int year) {
+    public List<Expense> retrieveExpenseByTopCategory(int userId, int year) {
         return expenseDAO.findTheTopCategory(userId, year);
     }
 

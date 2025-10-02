@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Table(name = "profile")
-public class ProfileRepo {
+public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,6 +58,6 @@ public class ProfileRepo {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     @JsonManagedReference
-    private UserRepo user;
+    private User user;
 
 }

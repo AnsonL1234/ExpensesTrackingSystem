@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Table(name = "expenses")
-public class ExpenseRepo {
+public class Expense {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,5 +42,5 @@ public class ExpenseRepo {
     )
     @JoinColumn(name = "user_id")
     @JsonManagedReference
-    private UserRepo user;
+    private User user;
 }

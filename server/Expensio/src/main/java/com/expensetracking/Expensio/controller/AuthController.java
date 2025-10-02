@@ -1,6 +1,6 @@
 package com.expensetracking.Expensio.controller;
 
-import com.expensetracking.Expensio.repository.UserRepo;
+import com.expensetracking.Expensio.repository.User;
 import com.expensetracking.Expensio.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,8 +22,8 @@ public class AuthController {
     }
 
     @PostMapping(value = "/login")
-    public ResponseEntity<UserRepo> userLogin(@RequestParam String username, @RequestParam String password) {
-        Optional<UserRepo> userRepo = userService.getUserByUsername(username);
+    public ResponseEntity<User> userLogin(@RequestParam String username, @RequestParam String password) {
+        Optional<User> userRepo = userService.getUserByUsername(username);
 
         // check if the user is empty
         if (userRepo.isEmpty()) {
