@@ -13,5 +13,5 @@ public interface UserDAO extends JpaRepository<UserRepo, Integer> {
     Optional<UserRepo> findByUsername(String username);
 
     @Query("SELECT UserRepo FROM UserRepo u WHERE u.user_id=:userId")
-    UserRepo getUserInfo(@Param("userId") int userId);
+    Optional<UserRepo> getUserInfo(@Param("userId") int userId);
 }

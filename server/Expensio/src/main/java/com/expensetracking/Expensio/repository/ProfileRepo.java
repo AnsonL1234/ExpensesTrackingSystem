@@ -32,7 +32,7 @@ public class ProfileRepo {
     private LocalDate dob;
 
     @Column(name = "email_address")
-    private String email;
+    private String email_address;
 
     @Column(name = "phone_number")
     private Long phone_number;

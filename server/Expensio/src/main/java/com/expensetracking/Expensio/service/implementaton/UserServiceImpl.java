@@ -44,4 +44,11 @@ public class UserServiceImpl implements UserService {
     public Optional<UserRepo> getUserByUsername(String username) {
         return userDAO.findByUsername(username);
     }
+
+    @Override
+    public Optional<UserRepo> getUserById(int userId) {
+        return userDAO.getUserInfo(userId);
+    }
+
+
 }

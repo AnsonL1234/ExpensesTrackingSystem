@@ -64,6 +64,7 @@ a:active {
 .section_title {
     margin: 0;
     padding: calc(1rem / 3);
+    margin-top: 1.5rem;
     margin-bottom: calc(1.5rem / 2);
     font-size: 0.8em;
     background-color: var(--btn-hover-color);
@@ -75,17 +76,38 @@ a:active {
     width: 100%;
 }
 
-.section1, .section2 {
+.section1, .section2{
     display: flex;
     gap: 1rem;
 }
 
-.section_firstNameField, .section_surnameField, .field1, .field2, .field3 {
+.section3 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.address_secondline_section {
+    display: flex;
+    gap: 1rem;
+}
+
+.section_firstNameField, .section_surnameField, 
+.field1, .field2, .field3,
+.address_field1, .address_field2, .address_field3, 
+.address_field4, .address_field5, .address_field6 {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
+}
+
+.button_section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 input[type=date], input[type=number] {
@@ -94,3 +116,4 @@ input[type=date], input[type=number] {
     border-radius: 4px;
     font-family: var(--text-front);
 }
+

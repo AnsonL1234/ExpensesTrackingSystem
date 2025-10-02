@@ -4,5 +4,5 @@ import com.expensetracking.Expensio.repository.ProfileRepo;
 
 public interface ProfileService {
 
-    void completeProfile(ProfileRepo profile);
+    void completeProfile(ProfileRepo profile, int userId);
 }

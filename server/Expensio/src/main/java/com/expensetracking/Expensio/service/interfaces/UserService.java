@@ -17,4 +17,5 @@ public interface UserService {
 
     Optional<UserRepo> getUserByUsername(String username);
 
+    Optional<UserRepo> getUserById(int userId);
 }

@@ -1,7 +1,8 @@
-import axios from "axios";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import LeftArrow from "../assets/left-arrow.png";
+import axios from "axios"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import LeftArrow from "../assets/left-arrow.png"
+import Register2 from "./Register2"
 import "./Register.css";
 
 
@@ -24,28 +25,16 @@ export default function Register() {
             password
         }
 
-        if (confirmPassword !== password) {
+        if (confirmPassword !== password || password === "" || confirmPassword === "") {
             setIsPasswordCorrect(false);
             setResponseMessage("Passwords do not match!");
             setHasError(true);
             return;
-        } 
-        
-        setIsPasswordCorrect(true);
-
-        // axios
-        //     .post(`http://localhost:7070/api/user/register`, newUser)
-        //     .then((response) => {
-        //         setResponseMessage("User register successfully!");
-        //         setHasError(false);
-        //         navigate("/register2");
-        //     })
-        //     .catch((error) => {
-        //         setResponseMessage("Oops! Something went wrong, please try again!");
-        //         setHasError(true);
-        //     });
-        
-        navigate("/register2");
+        } else {
+            setIsPasswordCorrect(true);
+            navigate("/register2", {state: newUser});
+            setHasError(false);
+        }
     };
 
 

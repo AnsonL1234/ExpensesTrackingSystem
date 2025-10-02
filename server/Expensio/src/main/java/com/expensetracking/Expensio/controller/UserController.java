@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -27,7 +28,11 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-
+    @GetMapping(value = "/findUser/{username}")
+    public ResponseEntity<UserRepo> getUser(@PathVariable("username") String username) {
+        Optional<UserRepo> userRepo = userService.getUserByUsername(username);
+        return new ResponseEntity<>(userRepo.orElseThrow(() -> new RuntimeException("User not found")), HttpStatus.OK);
+    }
 
     @PostMapping(value = "/register")
     public ResponseEntity<UserRepo> register(@RequestBody UserRepo user) {
