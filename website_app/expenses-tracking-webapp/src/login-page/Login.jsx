@@ -52,6 +52,7 @@ export default function Login() {
                         value={username} 
                         onChange={(e) => setUsername(e.target.value)} 
                         className="text-input"
+                        required
                     />
 
   
@@ -63,6 +64,7 @@ export default function Login() {
                         placeholder="Enter your password"
                         value={password} 
                         onChange={(e) => setPassword(e.target.value)} 
+                        required
                     />
 
                     <a onClick={() => navigate("/forgotPassword")} className="forgotPassword">
