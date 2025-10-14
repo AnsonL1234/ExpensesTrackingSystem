@@ -1,0 +1,36 @@
+@import url('../../index.css');
+
+.icon-size {
+    width: 20px;
+    height: 20px;
+}
+
+.hero_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.hero_section_children1 {
+    width: clamp(25.56rem, calc(100vw), 31.56rem);
+    height: 450px;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero_section_children2 {
+    width: 505px;
+    height: 450px;
+    justify-self: start;
+}
+
+.title {
+    font-size: clamp(var(--size-05), calc(9vw), 2rem);
+}
+
+.content {
+    font-size: clamp(var(--size-03), calc(9vw), 1.125rem);
+}

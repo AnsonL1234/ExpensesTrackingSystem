@@ -1,39 +1,23 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './landing-page/Home-page/Home.jsx'
-import About from './landing-page/About-page/About.jsx'
-import Feature from './landing-page/Feature-page/Feature.jsx'
-import Header from './landing-page/nevigation/header.jsx'
-import Login from './login-page/Login.jsx';
-import Register from './register-page/Register.jsx'
-import Register2 from './register-page/Register2.jsx'
-import MainPage from './MainPage/MainPage.jsx';
-import './App.css'
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import React, { useEffect, useState } from 'react'
+import HomePage from './landing_page/Home_Page/Home.jsx'
+import Navbar from './components/Navbar/Navbar.jsx'
+import './index.css';
+
 
 function App() {
-  
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme)
+  }, [theme])
 
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Header />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />}  />
-            <Route path="/feature" element={<Feature />}  />
-          </Route>
-
-          {/* <Route path='/mainPage' element={<MainPage />}> */}
-            {/* <Route path="/dashboard" element={<Home />} /> */}
-          {/* </Route> */}
-
-          {/* Render it without header */}
-          <Route path="/login" element={<Login />}  />
-          <Route path="/register" element={<Register />} />
-          <Route path="/register2" element={<Register2 />} />
-          <Route path="/mainPage" element={<MainPage />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <div className='app h-100'>
+      <Navbar />
+      <HomePage />
+    </div>
   )
 }
 

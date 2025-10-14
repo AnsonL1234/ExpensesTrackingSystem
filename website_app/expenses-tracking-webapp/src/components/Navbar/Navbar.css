@@ -1,0 +1,29 @@
+@import url('../../index.css');
+
+.navbar {
+    height: 40px;
+    top: 0;
+    position: sticky;
+    background-color: var(--color-bg-01);
+}
+
+img {
+    height: 35px;
+    width: 35px;
+}
+
+[type="button"] {
+    width: 70px;
+    height: 35px;
+    font-size: var(--size-03);
+    background-color: var(--color-bg-01);
+    color: var(--color-bg-04);
+    border: 1px solid var(--primary-text-04);
+    border-radius: 4px;
+}
+
+@media (width >= 800px) {
+    .burgerMenu {
+        display: none;
+    }
+}
