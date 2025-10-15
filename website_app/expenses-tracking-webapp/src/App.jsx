@@ -16,7 +16,7 @@ function App() {
   return (
     <div className='app h-100'>
       <Navbar />
-      <HomePage />
+      <HomePage theme={theme}/>
     </div>
   )
 }

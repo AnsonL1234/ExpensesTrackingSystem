@@ -1,3 +1,4 @@
+import PrimaryButton from "../../../components/Button/PrimaryButton";
 import "../../../index.css";
 import "../Home.css";
 
@@ -8,9 +9,7 @@ export default function HomeHeroSection1() {
             <p className="content margin-0 margin-bm-xl sdy-text-clr">
                 Simply log your expenses and we'll categorize them by purpose, daily, monthly, and yearly — giving you clarity on your financial habits
             </p>
-            <button type="button">
-                
-            </button>
+            <PrimaryButton name={"GET STARTED"}/>
         </div>
     );  
 }

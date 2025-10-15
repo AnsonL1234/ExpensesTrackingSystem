@@ -1,6 +1,13 @@
 @import url('../../../index.css');
 
 .hero_card {
-    width: 235px;
-    height: 214px;
+    width: 174px;
+    height: 154px;
+    background-color: var(--color-bg-02);
+    border-radius: 8px;
+}
+
+.chart_icons {
+    width: 75px;
+    height: 75px;
 }

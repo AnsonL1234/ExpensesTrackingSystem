@@ -13,7 +13,7 @@ export default function InfoSection() {
 
     return (
         <div className="display-flex flex-column align-center">
-            <h5 className="text-12 sdy-text-clr">TEH WEBSITE IS BUILDT BY</h5>
+            <h5 className="text-12 sdy-text-clr">TEH WEBSITE IS POWER BY</h5>
             <div className="built_tools">
                 <ul className="display-flex align-center gap-08 list-style-none text-12">
                     <li><BuiltTools icon={IconImage[0]} name={IconTitle[0]}/></li>

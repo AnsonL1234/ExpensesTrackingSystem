@@ -4,12 +4,12 @@ import HomeHeroSection from "./Home.HeroSection.jsx";
 import "../../index.css";
 
 
-export default function HomePage() {
+export default function HomePage({theme}) {
     return (
         <div className="h-100">
             <section className="home-hero-section h-100">
                 <span>
-                    <HomeHeroSection />
+                    <HomeHeroSection theme={theme}/>
                 </span>
                 <span>
                     <InfoSection />

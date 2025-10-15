@@ -1,4 +1,5 @@
 import { GiHamburgerMenu } from "react-icons/gi";
+import GeneralButton from "../Button/GeneralButton";
 import "./Navbar.css";
 import "../../index.css";
 
@@ -7,7 +8,7 @@ export default function NavbarButton() {
     return(
         <div className="display-flex align-center margin-rg-xxl">
             <GiHamburgerMenu className="burgerMenu"/>
-           <button type="button" >Log In</button>
+            <GeneralButton name={"Log In"} />
         </div>
     );
 }

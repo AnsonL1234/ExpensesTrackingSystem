@@ -1,0 +1,22 @@
+@import url('../../index.css');
+
+.general_button {
+    width: 70px;
+    height: 35px;
+    font-size: var(--size-03);
+    background-color: var(--color-bg-01);
+    color: var(--color-bg-04);
+    border: 1px solid var(--primary-text-04);
+    border-radius: 4px;
+}
+
+.primary_button {
+    width: 100px;
+    height: 35px;
+    font-size: var(--size-02);
+    font-weight: bold;
+    background-color: var(--color-bg-01);
+    color: var(--primary-clr);
+    border: 2px solid var(--primary-clr);
+    border-radius: 20px;
+}

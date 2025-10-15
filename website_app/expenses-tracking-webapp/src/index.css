@@ -122,8 +122,24 @@ body {
 .text-center {
   text-align: center;
 }
+.text-bold-400 {
+  font-weight: 400;
+}
+
+
 .justify-space-between {
   justify-content: space-between;
+}
+
+/* justify style */
+.justify-center {
+  justify-content: center;
+}
+.justify-start {
+  justify-content: start;
+}
+.justify-end {
+  justify-content: end;
 }
 
 /* styling color */
@@ -140,6 +156,9 @@ body {
 }
 .text-16 {
   font-size: var(--size-04);
+}
+.text-20 {
+  font-size: var(--size-05);
 }
 .text-32 {
   font-size: calc(var(--size-04) * 2);
@@ -169,6 +188,9 @@ body {
 }
 
 /* padding size */
+.padding-0 {
+  padding: 0;
+}
 .padding-xs {
   padding: var(--size-01);
 }

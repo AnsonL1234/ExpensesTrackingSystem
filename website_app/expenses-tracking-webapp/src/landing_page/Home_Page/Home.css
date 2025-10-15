@@ -22,9 +22,15 @@
 }
 
 .hero_section_children2 {
-    width: 505px;
-    height: 450px;
     justify-self: start;
+    
+    display: grid;
+    grid-template-columns: 190px 190px;
+    grid-template-rows: 190px;
+    grid-template-areas: 
+    "box1 box2"
+    "box3";
+    align-items: center;
 }
 
 .title {
