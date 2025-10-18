@@ -1,8 +1,9 @@
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import React, { useEffect, useState } from 'react'
 import HomePage from './landing_page/Home_Page/Home.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
+import About from './landing_page/About_Page/About.jsx';
 import './index.css';
 
 
@@ -17,6 +18,7 @@ function App() {
     <div className='app h-100'>
       <Navbar />
       <HomePage theme={theme}/>
+      <About theme={theme} />
     </div>
   )
 }

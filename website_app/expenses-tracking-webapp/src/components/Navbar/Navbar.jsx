@@ -9,7 +9,7 @@ export default function Navbar() {
 
 
     return (
-        <div className="navbar display-flex justify-space-between align-center padding-bm-lg padding-tp-lg">
+        <div className="navbar display-flex justify-space-between align-center">
             <NavbarLogo logoIcons={Logo} titles={"Expensio"}/>
             <Navigation {...NavbarData} />
             <NavbarButton />

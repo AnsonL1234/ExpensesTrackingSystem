@@ -10,6 +10,17 @@
     border-radius: 4px;
 }
 
+.button2 {
+    width: 100px;
+    height: 35px;
+    font-size: var(--size-02);
+    font-weight: bold;
+    background-color: var(--color-bg-01);
+    color: var(--primary-text-04);
+    border: 2px solid var(--primary-text-04);
+    border-radius: 20px;
+}
+
 .primary_button {
     width: 100px;
     height: 35px;

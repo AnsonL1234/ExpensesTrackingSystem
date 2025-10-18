@@ -1,0 +1,11 @@
+@import url('../../index.css');
+
+.about_title {
+    font-size: clamp(2rem, 4vw + 1rem, 3rem);
+}
+
+.about_content {
+    max-width: clamp(20rem, 90vw, 60rem);
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+    text-align: center;
+}

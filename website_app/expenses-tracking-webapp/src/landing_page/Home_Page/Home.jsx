@@ -6,8 +6,8 @@ import "../../index.css";
 
 export default function HomePage({theme}) {
     return (
-        <div className="h-100">
-            <section className="home-hero-section h-100">
+        <div className="vh-100">
+            <section className="h-100">
                 <span>
                     <HomeHeroSection theme={theme}/>
                 </span>
