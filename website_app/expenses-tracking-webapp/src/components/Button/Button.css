@@ -39,7 +39,7 @@
 .primary_button::after{
     content: '';
     position: absolute;
-    height: 108%;
+    height: 109%;
     width: 104%;
     border-radius: 1000px;
     background-image: linear-gradient(to right, var(--primary-clr), var(--secondary-clr));
@@ -50,4 +50,5 @@
     z-index: 0;
     box-shadow: 40px 0 100px var(--primary-clr), -40px 0 100px var(--secondary-clr);
     color: var(--primary-text-04);
+    transition: 350ms;
 }

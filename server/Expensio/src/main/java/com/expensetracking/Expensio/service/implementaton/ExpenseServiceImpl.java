@@ -19,22 +19,22 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     @Override
-    public List<Expense> retrieveExpenseByUserIdAndYear(int id, int year) {
+    public List<Expense> retrieveExpenseByUserIdAndYear(String id, int year) {
         return expenseDAO.listExpenseByUserIDAndYears(id, year);
     }
 
     @Override
-    public List<Expense> findExpenseMonthAndYear(int id, int month, int year) {
+    public List<Expense> findExpenseMonthAndYear(String id, int month, int year) {
         return expenseDAO.listOfExpenseByMonthsAndYears(id, month, year);
     }
 
     @Override
-    public List<Expense> retrieveExpenseByPurpose(int userId, String purpose, int month, int year) {
+    public List<Expense> retrieveExpenseByPurpose(String userId, String purpose, int month, int year) {
         return expenseDAO.findExpenseByPurpose(userId, purpose, month, year);
     }
 
     @Override
-    public List<Expense> retrieveExpenseByTopCategory(int userId, int year) {
+    public List<Expense> retrieveExpenseByTopCategory(String userId, int year) {
         return expenseDAO.findTheTopCategory(userId, year);
     }
 

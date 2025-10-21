@@ -1,13 +1,17 @@
 package com.expensetracking.Expensio.repository;
 
+import com.expensetracking.Expensio.ID_Generator.ExpenseIDGenerator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,9 +22,10 @@ import java.time.LocalDateTime;
 public class Expense {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "expenses_Id")
+    @GenericGenerator(name = "expenses_Id", type = ExpenseIDGenerator.class)
     @Column(name = "expenses_id")
-    private int expense_id;
+    private String expenses_id;
 
     @Column(name = "amount")
     private double amount;
@@ -29,7 +34,10 @@ public class Expense {
     private String purpose;
 
     @Column(name = "spend_at")
-    private LocalDateTime spend_at;
+    private String spend_at;
+
+    @Column(name = "spend_time")
+    private LocalDateTime spend_time;
 
     @ManyToOne(
             cascade =
@@ -43,4 +51,16 @@ public class Expense {
     @JoinColumn(name = "user_id")
     @JsonManagedReference
     private User user;
+
+    @OneToMany(
+            mappedBy = "expenses",
+            cascade = {
+                    CascadeType.DETACH,
+                    CascadeType.MERGE,
+                    CascadeType.REFRESH,
+                    CascadeType.PERSIST
+            }
+    )
+    @JsonIgnore
+    private List<PaymentMethod> paymentMethod;
 }

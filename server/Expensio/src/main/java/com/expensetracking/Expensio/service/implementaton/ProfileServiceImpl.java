@@ -19,7 +19,7 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
-    public void completeProfile(Profile profile, int userId) {
+    public void completeProfile(Profile profile, String userId) {
         User user = userDAO.findByUserId(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
         profile.setUser(user); // set foreign key

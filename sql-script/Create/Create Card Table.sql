@@ -1,5 +1,5 @@
 create table card (
-	card_id int auto_increment not null primary key, 
+	card_id varchar(36) not null primary key, 
     payment_method_id int not null, 
     card_type varchar(25), 
     card_number int not null, 

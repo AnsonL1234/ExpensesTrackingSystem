@@ -17,7 +17,7 @@ public class ProfileController {
     }
 
     @PostMapping(value = "/completeProfile/{userId}")
-    public ResponseEntity<Profile> completeProfile(@RequestBody Profile profile, @PathVariable("userId") int userId) {
+    public ResponseEntity<Profile> completeProfile(@RequestBody Profile profile, @PathVariable("userId") String userId) {
         profileService.completeProfile(profile, userId);
         return ResponseEntity.ok(profile);
     }

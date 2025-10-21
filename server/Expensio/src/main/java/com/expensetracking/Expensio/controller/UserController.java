@@ -34,12 +34,6 @@ public class UserController {
         return new ResponseEntity<>(userRepo.orElseThrow(() -> new RuntimeException("User not found")), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/findUser")
-    public ResponseEntity<User> getUser(@RequestParam int userId) {
-        Optional<User> userRepo = userService.getUserById(userId);
-        return new ResponseEntity<>(userRepo.orElseThrow(() -> new RuntimeException("User not found")), HttpStatus.OK);
-    }
-
     @PostMapping(value = "/register")
     public ResponseEntity<User> register(@RequestBody User user) {
 

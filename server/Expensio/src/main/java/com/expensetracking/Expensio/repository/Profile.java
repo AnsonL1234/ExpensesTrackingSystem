@@ -37,6 +37,9 @@ public class Profile {
     @Column(name = "phone_number")
     private Long phone_number;
 
+    @Column(name = "image_url")
+    private String image_url;
+
     @Column(name = "address1")
     private String address1;
 

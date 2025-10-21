@@ -20,13 +20,13 @@ public class ExpensesController {
     }
 
     @GetMapping(value = "/expense/expenses")
-    public List<Expense> retrieveExpenseByUserIDAndYear(@RequestParam int user_id, @RequestParam int year) {
+    public List<Expense> retrieveExpenseByUserIDAndYear(@RequestParam String user_id, @RequestParam int year) {
         return expenseService.retrieveExpenseByUserIdAndYear(user_id, year);
     }
 
     @GetMapping(value = "/expense/totalExpenses")
     public List<Expense> findRecentExpense(
-            @RequestParam int id,
+            @RequestParam String id,
             @RequestParam int month,
             @RequestParam int year
     ) {
@@ -35,7 +35,7 @@ public class ExpensesController {
 
     @GetMapping(value = "/expense/expenseByPurpose")
     public List<Expense> findExpenseByPurpose(
-            @RequestParam int id,
+            @RequestParam String id,
             @RequestParam String purpose,
             @RequestParam int month,
             @RequestParam int year
@@ -44,7 +44,7 @@ public class ExpensesController {
     }
 
     @GetMapping(value = "/expense/expenseByTopCategory")
-    public List<Expense> findExpenseByTopCategory(@RequestParam int id, @RequestParam int year) {
+    public List<Expense> findExpenseByTopCategory(@RequestParam String id, @RequestParam int year) {
         return  expenseService.retrieveExpenseByTopCategory(id, year);
     }
 }
