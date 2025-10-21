@@ -30,8 +30,8 @@ public class AuthController {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 
-        // check if the password is incorrect
-        if (!userRepo.get().getPassword().equals(password)) {
+        // check if username and password is match, if no return UNAUTHORIZED otherwise ignore this condition
+        if (!userRepo.get().getUsername().equals(username) || !userRepo.get().getPassword().equals(password)) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 

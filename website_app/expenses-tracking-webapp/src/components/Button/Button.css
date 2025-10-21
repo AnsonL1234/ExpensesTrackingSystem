@@ -27,7 +27,27 @@
     font-size: var(--size-02);
     font-weight: bold;
     background-color: var(--color-bg-01);
+    border: none;
     color: var(--primary-clr);
-    border: 2px solid var(--primary-clr);
-    border-radius: 20px;
+    border-radius: 1000px;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary_button::after{
+    content: '';
+    position: absolute;
+    height: 108%;
+    width: 104%;
+    border-radius: 1000px;
+    background-image: linear-gradient(to right, var(--primary-clr), var(--secondary-clr));
+    z-index: -1;
+}
+
+.primary_button:hover{
+    z-index: 0;
+    box-shadow: 40px 0 100px var(--primary-clr), -40px 0 100px var(--secondary-clr);
+    color: var(--primary-text-04);
 }
