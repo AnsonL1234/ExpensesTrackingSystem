@@ -10,7 +10,7 @@ public class CardIDGenerator implements IdentifierGenerator {
     @Override
     public Object generate(SharedSessionContractImplementor sharedSessionContractImplementor, Object o) {
         String generateUIDNo = String.format("%110d", new BigInteger(UUID.randomUUID().toString().replace("-",""), 16));
-        String uniqueID = "CRD" + generateUIDNo.substring(generateUIDNo.length() - 10);
+        String uniqueID = "CAS" + generateUIDNo.substring(generateUIDNo.length() - 10);
         return Long.parseLong(uniqueID, 16);
     }
 }

@@ -20,8 +20,8 @@ public class Card {
     @Id
     @GeneratedValue(generator = "card_Id")
     @GenericGenerator(name = "card_Id", type = CardIDGenerator.class)
-    @Column(name = "card_id")
-    private String card_id;
+    @Column(name = "card_cash_id")
+    private String card_cash_id;
 
     @Column(name = "card_type")
     private String card_type;
@@ -30,7 +30,7 @@ public class Card {
     private int card_number;
 
     @Column(name = "card_amount")
-    private double card_amount;
+    private double card_cash_amount;
 
     @Column(name = "issues_organization")
     private String issues_faculty;
