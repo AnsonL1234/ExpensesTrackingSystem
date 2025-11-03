@@ -10,6 +10,22 @@
     border-radius: 4px;
 }
 
+.general_button:hover {
+    box-shadow: 28px 0 100px var(--primary-text-04), -45px 0 100px var(--primary-text-04);
+    background-color: var(--primary-text-04);
+    color: var(--color-bg-01);
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+}
+
+.general_button:active {
+    opacity: .8;
+    /* -webkit-transition: opacity 500ms linear;
+    -ms-transition: opacity 500ms linear;
+    transition: opacity 500ms linear; */
+}
+
 .button2 {
     width: 100px;
     height: 35px;
@@ -51,4 +67,8 @@
     box-shadow: 40px 0 100px var(--primary-clr), -40px 0 100px var(--secondary-clr);
     color: var(--primary-text-04);
     transition: 350ms;
+}
+
+.primary_button:active {
+    opacity: .8;
 }
