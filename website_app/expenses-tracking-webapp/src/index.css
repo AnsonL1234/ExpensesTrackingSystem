@@ -96,6 +96,9 @@ body {
 .flex-column {
   flex-direction: column;
 }
+.flex-row {
+  flex-direction: row;
+}
 .flex-wrap {
   flex-wrap: wrap;
 }

@@ -37,6 +37,20 @@
     border-radius: 20px;
 }
 
+.button2:hover {
+    box-shadow: 40px 0 100px var(--primary-text-04), -40px 0 100px var(--primary-text-04);
+    background-color: var(--primary-text-04);
+    color: var(--color-bg-01);
+    font-weight: bold;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+}
+
+.button2:active {
+    opacity: .8;
+}
+
 .primary_button {
     width: 100px;
     height: 35px;
