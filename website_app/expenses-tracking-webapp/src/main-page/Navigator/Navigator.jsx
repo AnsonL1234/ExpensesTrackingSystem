@@ -7,7 +7,7 @@ export default function Navigator({titleIcons, menuIcons, menuIcons2}) {
         <div className="navigator_container">
             <div className="top_container">
                 <div className="logo_container">
-                    <img src={titleIcons} alt="title_icons" className=""/>
+                    <img src={titleIcons} alt="title_icons" className="logo_icon"/>
                     <h2>Expensio</h2>
                 </div>
                 <span className="underline"></span>

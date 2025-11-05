@@ -13,6 +13,8 @@ import SettingIconDark from '../assets/general_icons/settings.png';
 import InfoIconDark from '../assets/general_icons/info.png';
 import LogOutIconDark from '../assets/general_icons/exit.png';
 
+import DefaultImage from '../assets/general_icons/cat.png';
+
 import Navigation from '../main-page/Navigator/Navigator.jsx';
 import '../index.css';
 import './MainPage.css';
@@ -28,7 +30,19 @@ const imgIcons = theme === 'dark' ? LogoIconsLight: LogoIconsDark;
                 <Navigation titleIcons={imgIcons} menuIcons={menuIconTop} menuIcons2={menuIconBottom} />
             </div>
             <div className="main_container">
+                <div className="top_panel_container">
+                    <input type="text" name="" id="" placeholder="Search content" className='searchField' />
+                    <div className="usertag_container">
+                        <img src={DefaultImage} alt="profile_image" className='profile_image' />
+                        <div className="profile_content">
+                            <span className='username'>Anson Ling</span>
+                            <span className='email'>ansontan1001@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="balance_panel_container">
 
+                </div>
             </div>
         </div>
     );
