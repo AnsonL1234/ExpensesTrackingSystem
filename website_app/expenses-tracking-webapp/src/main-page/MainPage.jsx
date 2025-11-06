@@ -1,3 +1,7 @@
+import { useState } from 'react';
+import UserTag from '../components/Card_Component/GameTag/UserTag.jsx';
+import TotalPanel from '../components/Card_Component/Balance_Panel/TotalPanel.jsx';
+
 import LogoIconsDark from '../assets/logo/dark_logo.png';
 import LogoIconsLight from '../assets/logo/light_logo.png';
 
@@ -13,6 +17,8 @@ import SettingIconDark from '../assets/general_icons/settings.png';
 import InfoIconDark from '../assets/general_icons/info.png';
 import LogOutIconDark from '../assets/general_icons/exit.png';
 
+import MenuIconDark from '../assets/general_icons/menu.png';
+import SearchIconDark from '../assets/general_icons/search.png';
 import DefaultImage from '../assets/general_icons/cat.png';
 
 import Navigation from '../main-page/Navigator/Navigator.jsx';
@@ -23,25 +29,25 @@ export default function MainPage({theme}) {
 const menuIconTop = [HomeIconDark, LayerIconDark, DashboardIconDark, CardIconDark];
 const menuIconBottom = [ProfileIconDark, SettingIconDark, InfoIconDark, LogOutIconDark];
 const imgIcons = theme === 'dark' ? LogoIconsLight: LogoIconsDark;
+const [menuOpen, setMenuOpen] = useState(false);
 
     return(
         <div className="main_page_container h-100 w-100 display-flex flex-row ">
-            <div className="left_navigation">
+            <div className={menuOpen ? "left_navigation open": "left_navigation"}>
                 <Navigation titleIcons={imgIcons} menuIcons={menuIconTop} menuIcons2={menuIconBottom} />
             </div>
             <div className="main_container">
                 <div className="top_panel_container">
-                    <input type="text" name="" id="" placeholder="Search content" className='searchField' />
-                    <div className="usertag_container">
-                        <img src={DefaultImage} alt="profile_image" className='profile_image' />
-                        <div className="profile_content">
-                            <span className='username'>Anson Ling</span>
-                            <span className='email'>ansontan1001@gmail.com</span>
-                        </div>
+                    <div className="search_field">
+                        <img src={MenuIconDark} alt="menuIcons" className='menuIcons' onClick={() => setMenuOpen(!menuOpen)}/>
+                        <input type="text" name="" id="" placeholder="Search content" className='searchField' />
+                        <img src={SearchIconDark} alt="searchIcon" className='searchIcon' />
                     </div>
+                    <UserTag DefaultImage={DefaultImage} username={"Anson Ling"} email={"ansontan@gmail.com"}/>
                 </div>
                 <div className="balance_panel_container">
-
+                    <TotalPanel title={"Total Balances"} balance={2336.45}/>
+                    <TotalPanel title={"Total Expenses"} balance={295.78}/>
                 </div>
             </div>
         </div>

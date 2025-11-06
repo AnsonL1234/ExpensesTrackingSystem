@@ -1,12 +1,29 @@
 @import url('../index.css');
 
 /* css for left navigation in main page */
+
 .left_navigation {
     width: 280px;
     height: 100%;
+    top: 0;
+    left: 0;
+    position: sticky;
     display: flex;
     flex-direction: column;
     background-color: var(--color-bg-02);
+    transition: transform 0.3s ease, width 0.3s ease;
+    overflow: hidden;
+}
+
+.left_navigation.open {
+    transform: translateX(-100%);
+    width: 0;
+    overflow: hidden;
+}
+
+.main_container {
+  flex: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 .navigator_container {
@@ -63,6 +80,7 @@ h2 {
     gap: var(--size-01);
     font-size: 12px;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .menu_list:hover {
@@ -109,62 +127,79 @@ h2 {
     justify-content: space-between;
 }
 
-.searchField {
-    width: 14rem;
+.search_field {
+    margin: 0 var(--size-02);
+    padding: .2rem;
+    height: 1.7rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-01);
+    border: 1px solid var(--color-bg-03);
+    border-radius: calc(var(--size-02) / 1.5);
+}
+
+.menuIcons, .searchIcon {
+    width: 1.2rem;
     height: 1.2rem;
     margin: 0 var(--size-01);
-    color: var(--color-bg-02);
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.menuIcons:hover, .searchIcon:hover {
+    background-color: var(--color-bg-03);
+    opacity: .8;
+}
+
+.menuIcons:active, .searchIcon:active {
+    opacity: .6;
+}
+
+.searchField {
+    width: 12rem;
+    height: 1.7rem;
+    margin: 0;
     background-color: var(--color-bg-01);
-    border: 1px solid var(--color-bg-02);
-    border-radius: var(--size-01);
-    padding: .5rem;
+    caret-color: var(--primary-text-04);
+    font-size: var(--size-03);
+    border: none;
+}
+
+.searchField:not(:placeholder-shown) {
+    color: var(--primary-text-04);
+}
+
+::placeholder {
+    color: var(--color-bg-03);
 }
 
 .searchField:focus {
     outline: none;
-    border: 1px solid var(--color-bg-03);
-}
-
-.usertag_container {
-    width: 140px;
-    height: 2.1rem;
-    margin-right: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-bg-03);
-    border-radius: 4px;
-}
-
-.profile_image {
-    margin: 0;
-    margin-right: 5px;
-    width: 1.6rem;
-    height: 1.6rem;
-    border: 1px solid var(--color-bg-03);
-    border-radius: 50%;
-}
-
-.profile_content {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-}
-
-.username {
-    font-size: 11px;
-    font-weight: 600;
-}
-
-.email {
-    font-size: 8px;
 }
 
 .balance_panel_container {
     width: 100%;
-    height: 4.5rem;
+    height: 5rem;
+    display: flex;
+    /* gap: var(--size-02); */
     background-color: var(--color-bg-02);
     background-color: var(--color-bg-02);
     border-radius: var(--size-01);
 }
 
+@media (max-width: 52rem) {
+    .left_navigation {
+        transform: translateX(-100%);
+        width: 0;
+    }
+
+    .main_container {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 27.5rem) {
+    .balance_panel_containe {
+        height: 10rem;
+    }
+}

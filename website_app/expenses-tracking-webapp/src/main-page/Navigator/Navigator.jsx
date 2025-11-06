@@ -1,8 +1,10 @@
+import { useState } from "react";
 
 
 export default function Navigator({titleIcons, menuIcons, menuIcons2}) {
     const menu_list = ['Home', 'Manage Your Expenses', 'Dashboard', 'Card'];
     const meny_list2 = ['Profile', 'Settings', 'Information & Help', 'Log out'];
+
     return (
         <div className="navigator_container">
             <div className="top_container">
