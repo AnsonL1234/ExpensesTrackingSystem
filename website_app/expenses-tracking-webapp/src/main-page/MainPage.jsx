@@ -39,7 +39,7 @@ const [menuOpen, setMenuOpen] = useState(false);
             <div className="main_container">
                 <div className="top_panel_container">
                     <div className="search_field">
-                        <img src={MenuIconDark} alt="menuIcons" className='menuIcons' onClick={() => setMenuOpen(!menuOpen)}/>
+                        <img src={MenuIconDark} alt="menuIcons" className='menu' onClick={() => setMenuOpen(!menuOpen)}/>
                         <input type="text" name="" id="" placeholder="Search content" className='searchField' />
                         <img src={SearchIconDark} alt="searchIcon" className='searchIcon' />
                     </div>

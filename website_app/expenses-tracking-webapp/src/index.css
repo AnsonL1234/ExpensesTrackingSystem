@@ -34,6 +34,7 @@
   --color-bg-01: hsl(0, 0%, 0%);
   --color-bg-02: hsl(0, 0%, 5%);
   --color-bg-03: hsl(0, 0%, 10%);
+  --color-bg-04: hsl(0, 0%, 15%);
   --primary-text-04: hsl(0, 0%, 95%);
   --secondary-text-05: hsl(0, 0%, 70%);
 }
@@ -43,6 +44,7 @@
   --color-bg-01: hsl(0, 0%, 100%);
   --color-bg-02: hsl(0, 0%, 95%);
   --color-bg-03: hsl(0, 0%, 80%);
+  --color-bg-04: hsl(0, 0%, 75%);
   --primary-text-04: hsl(0, 0%, 5%);
   --secondary-text-05: hsl(0, 0%, 30%);
 }

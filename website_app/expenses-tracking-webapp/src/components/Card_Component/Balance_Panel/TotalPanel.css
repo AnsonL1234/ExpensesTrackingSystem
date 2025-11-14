@@ -7,11 +7,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-left: 3px solid var(--secondary-clr);
     border-radius: var(--size-01);
     background-color: var(--color-bg-03);
+    cursor: pointer;
 }
 
 .title {
+    width: 8.5rem;
     font-size: 14px;
     font-weight: 400;
     color: var(--secondary-text-05);

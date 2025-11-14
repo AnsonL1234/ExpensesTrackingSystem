@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     background-color: var(--color-bg-02);
-    transition: transform 0.3s ease, width 0.3s ease;
+    transition: transform 0.5s ease, width 0.5s ease;
     overflow: hidden;
 }
 
@@ -19,11 +19,6 @@
     transform: translateX(-100%);
     width: 0;
     overflow: hidden;
-}
-
-.main_container {
-  flex: 1;
-  transition: all 0.3s ease-in-out;
 }
 
 .navigator_container {
@@ -57,7 +52,7 @@ h2 {
 
 .underline {
     margin-top: var(--size-02);
-    width: 100%;
+    width: 198px;
     border: .5px solid var(--primary-text-04);
     border-radius: 1000px;
 }
@@ -73,6 +68,7 @@ h2 {
 }
 
 .menu_list {
+    width: 185px;
     list-style-type: none;
     padding: 8px;
     display: flex;
@@ -134,20 +130,23 @@ h2 {
     display: flex;
     align-items: center;
     background-color: var(--color-bg-01);
-    border: 1px solid var(--color-bg-03);
+    border: 1px solid var(--color-bg-04);
     border-radius: calc(var(--size-02) / 1.5);
 }
 
-.menuIcons, .searchIcon {
+.search_field:has(input[type="text"]:focus) {
+    border: 1px solid var(--color-bg-03);
+    box-shadow: 0 0 3px var(--secondary-text-05);
+}
+
+.menu, .searchIcon {
     width: 1.2rem;
     height: 1.2rem;
     margin: 0 var(--size-01);
     padding: 4px;
-    border-radius: 50%;
 }
 
-.menuIcons:hover, .searchIcon:hover {
-    background-color: var(--color-bg-03);
+.menu:hover, .searchIcon:hover {
     opacity: .8;
 }
 
@@ -160,17 +159,17 @@ h2 {
     height: 1.7rem;
     margin: 0;
     background-color: var(--color-bg-01);
-    caret-color: var(--primary-text-04);
+    color: var(--primary-text-04);
     font-size: var(--size-03);
     border: none;
 }
 
 .searchField:not(:placeholder-shown) {
-    color: var(--primary-text-04);
+    color: var(--secondary-text-05);
 }
 
 ::placeholder {
-    color: var(--color-bg-03);
+    color: var(--color-bg-04);
 }
 
 .searchField:focus {

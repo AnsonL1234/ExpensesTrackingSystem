@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import '../MainPage.css';
 
 export default function Navigator({titleIcons, menuIcons, menuIcons2}) {
     const menu_list = ['Home', 'Manage Your Expenses', 'Dashboard', 'Card'];
