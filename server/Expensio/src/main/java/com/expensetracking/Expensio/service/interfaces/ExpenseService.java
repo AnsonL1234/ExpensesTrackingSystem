@@ -1,16 +1,13 @@
 package com.expensetracking.Expensio.service.interfaces;
 
+import com.expensetracking.Expensio.dto.ExpenseDTO;
 import com.expensetracking.Expensio.repository.Expense;
 
 import java.util.List;
 
 public interface ExpenseService {
 
-    List<Expense> retrieveExpenseByUserIdAndYear(String id, int year);
+    List<ExpenseDTO> getRecentExpenseByYearMonth(String userID, int year, int month);
 
-    List<Expense> findExpenseMonthAndYear(String id, int month, int year);
-
-    List<Expense> retrieveExpenseByPurpose(String userId, String purpose, int month, int year);
-
-    List<Expense> retrieveExpenseByTopCategory(String userId, int year);
+    double getTotalExpenses(String userID);
 }

@@ -1,5 +1,5 @@
 create table expenses(
-	expenses_id varchar(36) null primary key, 
+	expenses_id varchar(36) not null primary key, 
     user_id varchar(36) not null, 
     payment_method_id int not null,
     amount double not null, 

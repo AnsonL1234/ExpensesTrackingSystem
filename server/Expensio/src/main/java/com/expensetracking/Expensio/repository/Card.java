@@ -14,7 +14,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Getter
 @Setter
 @Entity
-@Table(name = "card")
+@Table(name = "card_cash")
 public class Card {
 
     @Id
@@ -27,9 +27,9 @@ public class Card {
     private String card_type;
 
     @Column(name = "card_number")
-    private int card_number;
+    private Long card_number;
 
-    @Column(name = "card_amount")
+    @Column(name = "card_cash_amount")
     private double card_cash_amount;
 
     @Column(name = "issues_organization")
@@ -38,7 +38,7 @@ public class Card {
     @Column(name = "issues_countries")
     private String issues_countries;
 
-    @ManyToOne(
+    @OneToOne(
             cascade =
                     {
                             CascadeType.DETACH,
@@ -47,7 +47,7 @@ public class Card {
                             CascadeType.REFRESH
                     }
     )
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "payment_method_id")
     @JsonManagedReference
-    private User user;
+    private PaymentMethod paymentMethod;
 }

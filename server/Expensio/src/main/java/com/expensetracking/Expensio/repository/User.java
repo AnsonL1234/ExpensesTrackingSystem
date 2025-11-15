@@ -76,16 +76,4 @@ public class User {
     @JsonIgnore
     private List<PaymentMethod> paymentMethods;
 
-    @OneToMany(
-            mappedBy = "user",
-            cascade = {
-                    CascadeType.DETACH,
-                    CascadeType.MERGE,
-                    CascadeType.REFRESH,
-                    CascadeType.PERSIST
-            }
-    )
-    @JsonIgnore
-    private List<Card> card;
-
 }

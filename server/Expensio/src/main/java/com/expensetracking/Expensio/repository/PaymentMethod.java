@@ -1,5 +1,6 @@
 package com.expensetracking.Expensio.repository;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -38,7 +39,8 @@ public class PaymentMethod {
     @JsonManagedReference
     private User user;
 
-    @ManyToOne(
+    @OneToMany(
+            mappedBy = "paymentMethod",
             cascade =
                     {
                             CascadeType.DETACH,
@@ -47,6 +49,19 @@ public class PaymentMethod {
                             CascadeType.REFRESH
                     }
     )
-    @JoinColumn(name = "expenses_id")
-    private Expense expenses;
+    @JsonIgnore
+    private List<Expense> expenses;
+
+    @OneToOne(
+            mappedBy = "paymentMethod",
+            cascade =
+                    {
+                            CascadeType.DETACH,
+                            CascadeType.MERGE,
+                            CascadeType.PERSIST,
+                            CascadeType.REFRESH
+                    }
+    )
+    @JsonIgnore
+    private Card cards;
 }

@@ -52,8 +52,7 @@ public class Expense {
     @JsonManagedReference
     private User user;
 
-    @OneToMany(
-            mappedBy = "expenses",
+    @ManyToOne(
             cascade = {
                     CascadeType.DETACH,
                     CascadeType.MERGE,
@@ -61,6 +60,6 @@ public class Expense {
                     CascadeType.PERSIST
             }
     )
-    @JsonIgnore
-    private List<PaymentMethod> paymentMethod;
+    @JoinColumn(name = "payment_method_id")
+    private PaymentMethod paymentMethod;
 }

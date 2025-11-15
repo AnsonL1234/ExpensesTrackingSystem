@@ -1,5 +1,6 @@
 package com.expensetracking.Expensio.controller;
 
+import com.expensetracking.Expensio.dto.ExpenseDTO;
 import com.expensetracking.Expensio.repository.Expense;
 import com.expensetracking.Expensio.service.interfaces.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,32 +20,17 @@ public class ExpensesController {
         this.expenseService = expenseService;
     }
 
-    @GetMapping(value = "/expense/expenses")
-    public List<Expense> retrieveExpenseByUserIDAndYear(@RequestParam String user_id, @RequestParam int year) {
-        return expenseService.retrieveExpenseByUserIdAndYear(user_id, year);
-    }
-
     @GetMapping(value = "/expense/totalExpenses")
-    public List<Expense> findRecentExpense(
-            @RequestParam String id,
-            @RequestParam int month,
-            @RequestParam int year
-    ) {
-        return expenseService.findExpenseMonthAndYear(id, month, year);
+    private double getTotalExpenses(@RequestParam String userID) {
+        return expenseService.getTotalExpenses(userID);
     }
 
-    @GetMapping(value = "/expense/expenseByPurpose")
-    public List<Expense> findExpenseByPurpose(
-            @RequestParam String id,
-            @RequestParam String purpose,
-            @RequestParam int month,
-            @RequestParam int year
+    @GetMapping(value = "/expense/recentExpenses")
+    private List<ExpenseDTO> getRecentExpensesByYearMonth(
+            @RequestParam String userID,
+            @RequestParam int year,
+            @RequestParam int month
     ) {
-        return expenseService.retrieveExpenseByPurpose(id, purpose, month, year);
-    }
-
-    @GetMapping(value = "/expense/expenseByTopCategory")
-    public List<Expense> findExpenseByTopCategory(@RequestParam String id, @RequestParam int year) {
-        return  expenseService.retrieveExpenseByTopCategory(id, year);
+        return expenseService.getRecentExpenseByYearMonth(userID, year, month);
     }
 }
