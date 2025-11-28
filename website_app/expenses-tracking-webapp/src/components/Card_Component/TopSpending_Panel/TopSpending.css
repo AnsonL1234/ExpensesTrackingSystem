@@ -1,9 +1,8 @@
 @import url('../../../index.css');
 
 .TopSpending_Container {
-    width: 95%;
-    height: 115px;
-    padding: 10px;
+    width: 100%;
+    height: 125px;
     display: flex;
     flex-direction: column;
     background-color: var(--color-bg-02);
@@ -12,6 +11,7 @@
 
 .TopPanel_Container {
     margin: 0 10px;
+    padding-top: 10px;
     display: flex;
     gap: var(--size-03);
 }

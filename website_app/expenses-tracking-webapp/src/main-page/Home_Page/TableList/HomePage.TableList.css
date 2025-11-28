@@ -1,0 +1,17 @@
+@import url('../../../index.css');
+
+.table_list {
+    width: 100%;
+    background-color: var(--color-bg-02);
+    border-collapse: collapse;
+}
+
+th {
+    color: var(--secondary-text-05);
+    padding: var(--size-01);
+    text-align: left;
+    font-weight: 400;
+    border-top: 1px solid var(--color-bg-04);
+    border-bottom: 1px solid var(--color-bg-04);
+    font-size: .6rem;
+}

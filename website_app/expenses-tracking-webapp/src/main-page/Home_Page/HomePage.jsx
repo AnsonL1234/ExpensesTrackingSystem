@@ -1,5 +1,6 @@
 import TopSpending from '../../components/Card_Component/TopSpending_Panel/TopSpending';
 import Button3 from '../../components/Button/Button3.jsx'
+import TableList from './TableList/HomePage.TableList.jsx';
 import './HomePage.css';
 
 import GroceryIcons from'../../assets/general_icons/grocery-store.png';
@@ -62,7 +63,7 @@ export default function HomePage() {
                         <img src={ListIcon} alt="listIcons" className='listIcons' />
                         <h4>Recent Expenses</h4>
                     </div>
-                    
+                    <TableList />
                 </div>
             </div>
             <div className="Home_Panel2">
